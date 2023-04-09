@@ -6,9 +6,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="maincss.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -31,30 +33,63 @@
             correoi = request.getParameter("correoi");
             contrai = request.getParameter("passi");
         %>
+        <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 side-image">
+                    <!-------Image-------->
+                    <img src="images/white.png" alt="">
+                    <div class="text">
+                        <p>Unete a la comunidad de Psyness<i> -Axocode</i></p>
+                    </div>
+                </div>
+                <div class="col-md-6 right">
+                     <div class="input-box">
+                        <header>Iniciar Sesion</header>
+                        <form id="form2">
+                            <div class="input-field">
+                                <input id="correoi" name="correoi" value="<%=correoi%>" type="text" class="input"/>
+                                <label for="correoi">Correo</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="passi" name="passi" value="<%=contrai%>" type="password" class="input"/> 
+                                <label for="passi">Contraseña</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" id="comprobar" name="<%=accion%>" class="submit" />     
+                            </div>
+                            <div class="signin">
+                                <span>No tienes una cuenta?<a href="#">Crear cuenta</a></span>
+                            </div>
+                        </form>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+         
         
-            <h1>
-            Iniciar sesion <br>         
-            <small class="text-muted">Selecciona enviar para iniciar sesion</small>
-            </h1>
             
-            <form id="form2">
+        
+            
+                                <!--<form id="form2">
             <table border="1">
                 <tr>                   
                     <td>Correo</td>
-                    <td><input id="correoi" name="correoi" value="<%=correoi%>" type="text"/></td>                   
+                    <td><input id="correoi" name="correoi" value="</*%=correoi%>" type="text"/></td>                   
                 </tr>
                 <tr>                    
                     <td>Contraseña</td>
-                    <td><input id="passi" name="passi" value="<%=contrai%>" type="password"/>                      
+                    <td><input id="passi" name="passi" value="</*%=contrai%>" type="password"/>                      
                     </td>
                 </tr>
                 <tr >
                     <td colspan="2">
-                        <input type="submit" id="comprobar" name="<%=accion%>" />
+                        <input type="submit" id="comprobar" name="</*%=accion%>" />
                     </td>
                 </tr>
             </table>
-        </form>
+        </form>-->
                     <%
                         if (correoi == "")
                             out.println("el correo es" + correoi);
