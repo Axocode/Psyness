@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="maincss.css">
+        <link rel="stylesheet" href="css/maincss.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
         <title>JSP Page</title>
     </head>
@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-md-6 side-image">
                     <!-------Image-------->
-                    <img src="images/white.png" alt="">
+                    <img src="images/icono.svg" alt="">
                     <div class="text">
                         <p>Unete a la comunidad de Psyness<i> -Axocode</i></p>
                     </div>
