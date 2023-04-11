@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.general{
+    background: #fff;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.contenedor{
+    width: 100%;
+    max-width: 2000px;
+    height: 650px;
+    margin: 20px auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+}
+
+.contenedor > div{
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .publicar{
+    background: #000;
+    color: #fff;
+    grid-column:  2 / 4;
+    margin-top: 20px;
+    border-radius: 25px;
+}
+
+.contenedor .contenido{
+    
+    background: #A770EF;  
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 25px;
+    color: #fff;
+    grid-column:  2 / 4;
+}
+
+.contenedor .sidebar{
+    background: #000;
+    color: #fff;
+    grid-column: 1 / 2;
+    grid-row: span 4;
+}
+.contenedor .sidebar .img{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-buttom: 800px;
+}
+
+.contenedor .sidebar .input-box{
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+
+.contenedor .sidebar_perfil{
+    background: #000;
+    color: #fff;
+    grid-column: 4 / 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 2 / 3;
+    margin-right: 30px;
+    border-radius: 35px;
+}
+
+.contenedor .sidebar_perfil .img{
+    height: auto;
+    border-radius: 50%;
+}
