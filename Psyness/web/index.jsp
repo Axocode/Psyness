@@ -112,15 +112,15 @@
                         <header>Crear cuenta</header>
                         <form id="form1">
                             <div class="input-field">
-                                <input id="user" name="user" value="<%=datos.getIusuario()%>" type="text" class="input"/>
+                                <input id="user" name="user" value="<%=datos.getIusuario()%>" type="text" class="input" required/>
                                 <label for="user">Nombre de Usuario</label>
                             </div>
                             <div class="input-field">
-                                <input id="correo" name="correo" value="<%=datos.getIcorreo()%>" type="text" class="input"/>
+                                <input id="correo" name="correo" value="<%=datos.getIcorreo()%>" type="text" class="input" required/>
                                 <label for="correo">Correo</label>
                             </div>
                             <div class="input-field">
-                                <input id="pass" name="pass" value="<%=datos.getIcontra()%>" type="password" class="input"/> 
+                                <input id="pass" name="pass" value="<%=datos.getIcontra()%>" type="password" class="input" required/> 
                                 <label for="pass">Contraseña</label>
                             </div>
                             <div class="input-field">
