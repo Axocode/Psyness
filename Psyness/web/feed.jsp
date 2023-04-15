@@ -23,16 +23,7 @@
         
     </head>
     <body>
-        <%
-                    HttpSession sesion = request.getSession();
-                    String Iidex;
-                    if (sesion.getAttribute("Idprima") != null)  {
-                    Iidex = sesion.getAttribute("Idprima").toString();
-                    out.print("<a href='index.jsp?cerrar=true'><h5>Cerrar Sesion</h5></a>");
-                        }else{
-                        out.print("<script>location.replace('index.jsp');</script>");
-            }                        
-        %>
+        
         <div class="general">
             <div class="contenedor">
                 <div class="sidebar">
@@ -53,36 +44,84 @@
                             <a href="datacenter.jsp"><i class="fa-regular fa-file-lines"></i> Datacenter</a>
                         </nav>
                     </div>
+                    <div class="cerrarsesion">
+                        <a href="login.jsp">Cerrar Sesión</a>
+                    </div>
                 </div>
                 <div class="publicar">
-                    <div class="input-box">
-                        <form id="">
-                            <div class="input-field">
-                                <input id="publicar" name="publicar" value="" type="" class=""/>
-                                <label for="">Publicar</label>
+                    <div class="checkbox">
+                        <input id="btn-modal" value="<%%>" type="checkbox" placeholder="Buscar">
+                        <label for="btn-modal" class="lbl-modal">
+                            ¿Deseas publicar algo? 
+                        </label>
+                    </div>
+                    <div class="modal">
+                        <div class="contenedor-modal">
+                            <header>--Bienvenido--</header>
+                            <label for="btn-modal">X</label>
+                            <div class="contenido-modal">
                             </div>
-                        </form>
+                        </div>
+                    </div>
+                    <div class="menu-modal">
+                        <nav>
+                            <div class="agregar">
+                                <h3>Agregar imagen</h3>
+                                <div class="btn-icon">
+                                    <input id="btn-add" value="<%%>" type="checkbox">
+                                    <i class="fa-solid fa-camera"></i>
+                                </div>
+                            </div>
+                            <div class="subir">
+                                <h3>Subir imagen</h3>
+                                <div class="btn-icon">
+                                    <input id="btn-getup" value="<%%>" type="checkbox">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
                 </div>
-                <div class="contenido">
-                    <div class="img">
-                        <img src="images/perfilsidebar.png" width="60">
-                        <h3>Nombre del usuario</h3>
-                        <form id="form1">
-                            <div class="input-field">
-                                <input type="submit" id="follow" name="<%%>" class="submit" />
+                <div class="contenido-publi">
+                    <div class="encabezado">
+                        <nav>
+                            <div class="img">
+                                <img src="images/perfilsidebar.png" width="60">
                             </div>
-                        </form>
+                            <div class="username">
+                                <h3>Nombre del usuario</h3>
+                            </div>
+                            <div class="btn-enviar">
+                                <input type="checkbox" id="btn-follow" class="submit"/>
+                                <label for="btn-follow" class="lbl-follow">Seguir</label>
+                            </div>
+                        </nav>    
                     </div>
-                    <div class="text">
+                    <div class="contenido-text">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, laoreet a malesuada
                         curabitur morbi habitasse, ut convallis congue ad conubia pretium. Ac sagittis
                         conubia sem metus cubilia neque faucibus integer dictumst, inceptos risus odio 
                         netus nisi lobortis pulvinar montes aliquam erat, quis vehicula lacinia sed urna
                         orci malesuada est. Sagittis rutrum arcu condimentum vel facilisis at velit,
                         curabitur orci habitant porta pharetra enim, ultricies egestas potenti elementum
-                        suspendisse laoreet.</p>
-                        <br><br>
+                        suspendisse laoreet.</p><br><br><br>
+                    </div>
+                    <div class="pie-publi">
+                        <nav>
+                            <div class="fecha">
+                                <h3>4-Abril-2023 6:03</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="btn-icon">
+                                    <h3><i class="fa-solid fa-heart"></i> 500k</h3>
+                                </div>
+                            </div>
+                            <div class="shares">
+                                <div class="btn-icon">
+                                    <h3><i class="fa-sharp fa-solid fa-star"></i> 12</h3>
+                                </div>
+                            </div>
+                        </nav>    
                     </div>
                 </div>
                 <div class="sidebar_perfil">
@@ -101,7 +140,6 @@
                             <h3>Nombre del usuario</h3>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>

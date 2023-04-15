@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 .general{
@@ -10,7 +11,9 @@
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background-attachment: fixed;
+    background-size: cover;
+    height: 50em;
     color: #000;
     font-family: 'Roboto', sans-serif;
     
@@ -18,6 +21,7 @@
 
 .contenedor{
     width: 100%;
+    height: auto;
     max-width: 2000px;
     margin: 20px auto;
     margin-top: 0;
@@ -33,12 +37,16 @@
     padding: 20px;
 }
 
+/*--Estilos Sidebar Del Menú--*/
+
 .contenedor .sidebar{
     background: #000;
     color: #fff;
     grid-column: 1 / 2;
     grid-row: span 5;
     height: 100vh;
+    position: fixed;
+    
 }
 .contenedor .sidebar .img{
     height: auto;
@@ -112,7 +120,7 @@
     text-decoration: none;
     padding: 6vh;
     color: #fff;
-    border-left: 25px solid transparent;
+    border-left: 13px solid transparent;
     transition: all 400ms ease;
     font-size: 18px; 
 }
@@ -122,6 +130,8 @@
     background: #1f1f1f;
 }
 
+/*--Estilos Del Cuadro Publicar--*/
+
 .contenedor .publicar{
     background: #000;
     color: #fff;
@@ -130,10 +140,130 @@
     border-radius: 25px;
     height: 80px;
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.contenedor .contenido{
+
+.publicar .checkbox{
+    box-sizing: border-box;
+    font-size: 20px;
+    width: 300px;
+    height: 50px;
+    margin-left: 70px;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 500ms ease;
+    transform: translateX(-25%);
+}
+
+.publicar .checkbox label{
+    color: #ADA996;
+    cursor: pointer;
+}
+
+.modal{
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-modal{
+    display: none;
+}
+
+#btn-modal:checked ~ .modal{
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedor-modal{
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+    transition: all 500ms ease;
+    position: relative;
+}
+
+.contenedor-modal header{
+    padding: 10px;
+    background: #A770EF;
+    color: #fff;
+}
+
+.contenedor-modal label{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contenedor .publicar .checkbox:hover{
+    transform: translateX(-20%);
+    background: #F5F5F5;
+}
+
+.publicar .menu-modal nav{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transform: translateX(10%);
+    margin-left: -50px;
+}
+
+.publicar .menu-modal .agregar .btn-icon{
+    transform: translateX(35%);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#btn-add{
+    display: none;
+}
+
+.publicar .menu-modal .btn-icon i{
+    cursor: pointer;
+    transition: all 500ms ease;
+    transform: translateY(-10%);
+}
+
+.publicar .menu-modal .subir .btn-icon{
+    transform: translateX(30%);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#btn-getup{
+    display: none;
+}
+
+.publicar .menu-modal nav h3{
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 0 20px;
+    color: #fff;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.publicar .menu-modal .btn-icon i:hover{
+    transform: scale(108%);
+    color: #DADAD2;
+    transform: translateY(-20%);
     
+}
+
+/*--Estilos Contenido De La Publicación--*/
+
+.contenedor .contenido-publi{
     background: #fff;
     color: #000;
     grid-column:  2 / 4;
@@ -142,6 +272,109 @@
     height: 65vh;
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
 }
+
+.contenido-publi .encabezado nav{
+    align-items: center;    
+    justify-content: left;
+    display: flex;
+    padding: 12px;
+}
+
+.contenido-publi .encabezado .img{
+    font-size: 30px;
+    height: auto;
+    border-radius: 50%;
+    padding: 0;
+    position: relative;
+}
+
+.contenido-publi .encabezado .username{
+    margin-left: 30px;
+}
+
+.contenido-publi .encabezado .username h3{
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 30px;
+    font-family: 'helvetica';
+}
+
+.contenido-publi .encabezado .btn-enviar{
+    margin-left: 100px;
+}
+
+#btn-follow{
+    display: none;
+}
+
+.contenido-publi .encabezado .btn-enviar label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #A770EF;
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contenido-publi .encabezado img:hover{
+    transform: scale(105%);
+    cursor: pointer;
+}
+
+.contenido-publi .encabezado .btn-enviar label:hover{
+    background: #E9AEFB;
+    transform: scale(105%);
+}
+
+.contenido-publi .contenido-text{
+    margin-top: 10px;
+}
+
+.contenido-publi .pie-publi nav{
+    align-items: center;    
+    justify-content: left;
+    display: flex;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.contenido-publi .pie-publi .fecha h3{
+    font-size: 20px;
+}
+
+.contenido-publi .pie-publi .likes{
+    margin-left: 110px;
+}
+
+.contenido-publi .pie-publi .likes i{
+   font-size: 27px; 
+   color: #7F0FA2;
+}
+
+.contenido-publi .pie-publi .likes h3{
+    font-size: 20px;
+}
+
+.contenido-publi .pie-publi .shares{
+    margin-left: 120px;
+}
+
+.contenido-publi .pie-publi .shares i{
+   font-size: 27px; 
+   color: #F5F510;
+}
+
+.contenido-publi .pie-publi .shares h3{
+    font-size: 20px;
+}
+
+
+
+/*--Estilos Sidebar Del Perfil--*/
 
 .contenedor .sidebar_perfil{
     background: #000;
@@ -194,4 +427,23 @@
 .sidebar_perfil:hover{
     background: #1f1f1f;
     transform: scale(103%);
+    cursor: pointer;
 }
+
+.sidebar .cerrarsesion{
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+    transform: translateY(260%);
+}
+
+.sidebar .cerrarsesion a{
+    text-decoration: none;
+    color: #D3D3D0;
+    font-size: 15px;
+}
+
+.sidebar .cerrarsesion a:hover{
+    color: #fff;
+}
+
