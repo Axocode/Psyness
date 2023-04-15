@@ -3,7 +3,10 @@
     Created on : 10/04/2023, 10:22:31 AM
     Author     : admin
 --%>
-
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="interDatos.Idatos"%>
+<%@page session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,6 +23,16 @@
         
     </head>
     <body>
+        <%
+                    HttpSession sesion = request.getSession();
+                    String Iidex;
+                    if (sesion.getAttribute("Idprima") != null)  {
+                    Iidex = sesion.getAttribute("Idprima").toString();
+                    out.print("<a href='index.jsp?cerrar=true'><h5>Cerrar Sesion</h5></a>");
+                        }else{
+                        out.print("<script>location.replace('index.jsp');</script>");
+            }                        
+        %>
         <div class="general">
             <div class="contenedor">
                 <div class="sidebar">

@@ -6,8 +6,9 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="interDatos.Idatos"%>
+<%@page session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+  
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,11 +24,13 @@
     </head>
     <body>
         <%
+            HttpSession sesion = request.getSession();
             String Iusuario = null;
             String Icorreo = null;
             String correoi = null;
             String Icontra = null;
             String contrai = "";
+            String Iedad = null;
             String Iid = null;
             String guardar = null;
             String editar = null;
@@ -35,8 +38,13 @@
             String actualizar = "guardar";
             Idatos datos = null;
             Integer idx = null;
+            String cadenaEsp = null;
             List<Idatos>lista = null;
             
+            if (request.getParameter("cerrar")!= null) {
+                    session.invalidate();
+                }
+
             session = request.getSession( true );
             if( session != null )
             {
@@ -49,8 +57,8 @@
             Iusuario = request.getParameter( "user" );
             Icorreo = request.getParameter( "correo" );
             Icontra = request.getParameter( "pass" );
+            Iedad = request.getParameter( "edad" );
             guardar = request.getParameter( "guardar" );
-            Iid = request.getParameter( "id" );
             editar = request.getParameter( "editar" );
             actualizar = request.getParameter( "actualizar" );
             
@@ -77,13 +85,18 @@
                 datos.setIusuario(Iusuario);
                 datos.setIcontra(Icontra);
                 datos.setIcorreo(Icorreo);
+                datos.setIedad(Iedad);
+                cadenaEsp = Iusuario.replaceAll(" ","").toLowerCase();
+                datos.setIid(cadenaEsp);
+                sesion.setAttribute("Idprima", cadenaEsp);
                 
                 if( "Submit".equals( guardar ) )
                 {
                     lista.add( datos );
+                    response.sendRedirect("feed.jsp");
                 }
         %>
-        <h1>jalo</h1>
+            
         <% } 
                    
             if( datos == null )
@@ -92,7 +105,7 @@
                 datos.setIusuario("");               
                 datos.setIcontra("");
                 datos.setIcorreo("");
-
+                datos.setIedad("");
             }
             if( !"Submit".equals( guardar ) && !"Submit".equals( actualizar ) )
             {
@@ -110,10 +123,14 @@
                 <div class="col-md-6 right">
                      <div class="input-box">
                         <header>Crear cuenta</header>
-                        <form id="form1">
+                        <form id="form1" method="POST">
                             <div class="input-field">
                                 <input id="user" name="user" value="<%=datos.getIusuario()%>" type="text" class="input" required/>
                                 <label for="user">Nombre de Usuario</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="edad" name="edad" value="<%=datos.getIedad()%>" type="text" class="input" required/>
+                                <label for="edad">Edad</label>
                             </div>
                             <div class="input-field">
                                 <input id="correo" name="correo" value="<%=datos.getIcorreo()%>" type="text" class="input" required/>
@@ -124,7 +141,7 @@
                                 <label for="pass">Contraseña</label>
                             </div>
                             <div class="input-field">
-                                <input type="submit" id="Guardar" name="<%=accion%>" class="submit" />     
+                                <input type="submit" id="Guardar" name="<%=accion%>"  class="submit"/>     
                             </div>
                             <div class="signin">
                                 <span>Ya tienes una cuenta? <a href="login.jsp">Iniciar Sesion</a></span>

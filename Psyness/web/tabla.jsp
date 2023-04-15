@@ -14,8 +14,8 @@
     </head>
     <body style="background-color: #F7FFF7">
         <h1>
-            Tabla de Calificaciones <br>         
-            <small class="text-muted">Selecciona añadir para agregar otro estudiante</small>
+            BASE DE DATOS PSYNESS <br>         
+            <small class="text-muted">Recopilador de datos  </small>
         </h1><br><br>
         <%
             int i = 0;
@@ -47,6 +47,8 @@
                 <td>Usuario</td>
                 <td>Contraseña</td>
                 <td>Correo</td>
+                <td>Edad</td>
+                <td>Activa</td>
                  <td>Acciones</td>
             </tr>
             <%
@@ -57,14 +59,16 @@
             %>
             <tr>
                 <td><%=i + 1%></td>
-                <td><%=i%></td>
+                <td><%= datos.getIid() %></td>
                 <td><%=datos.getIusuario()%></td>
                 <td><%=datos.getIcontra()%></td>
-                <td><%=datos.getIcorreo()%></td>  
+                <td><%=datos.getIcorreo()%></td>
+                <td><%=datos.getIedad()%></td>
+                <td><%=datos.getIactiva()%></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                         <button type="button" class="btn btn-danger"><a href="tabla.jsp?id=<%=i%>&borrar=Submit" class="link-light">Borrar</a> </button>
-                        <button type="button" class="btn btn-info"><a href="tabla.jsp?id=<%=i++%>&editar=Submit" class="link-dark">Editar</a> </button>
+
                     </div>
                 </td>
             </tr>      
