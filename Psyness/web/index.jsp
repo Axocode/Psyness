@@ -25,18 +25,18 @@
     <body>
         
         <%
+            String editar = null;
+            String contrai = "";
+            String actualizar = "guardar";
             HttpSession sesion = request.getSession();
             String Iusuario = null;
             String Icorreo = null;
             String correoi = null;
             String Icontra = null;
-            String contrai = "";
             String Iedad = null;
             String Iid = null;
             String guardar = null;
-            String editar = null;
             String accion = "guardar";
-            String actualizar = "guardar";
             Idatos datos = null;
             Integer idx = null;
             String cadenaEsp = null;
@@ -45,7 +45,7 @@
             if (request.getParameter("cerrar")!= null) {
                     session.invalidate();
                 }
-
+                
             session = request.getSession( true );
             if( session != null )
             {
@@ -87,8 +87,10 @@
                 datos.setIcontra(Icontra);
                 datos.setIcorreo(Icorreo);
                 datos.setIedad(Iedad);
+                
                 cadenaEsp = Iusuario.replaceAll(" ","").toLowerCase();
                 datos.setIid(cadenaEsp);
+                
                 sesion.setAttribute("Idprima", cadenaEsp);
                 sesion.setAttribute("INombreuser", Iusuario);
                 sesion.setAttribute("ICorreos", Icorreo);
@@ -136,7 +138,7 @@
                                 <label for="edad">Edad</label>
                             </div>
                             <div class="input-field">
-                                <input id="correo" name="correo" value="<%=datos.getIcorreo()%>" type="text" class="input" required onblur="validar(form.correo.value)" />
+                                <input id="correo" name="correo" value="<%=datos.getIcorreo()%>" type="email" class="input" required onblur="validar(form.correo.value)" />
                                 <label for="correo">Correo</label>
                             </div>
                             <div class="input-field">
@@ -160,10 +162,10 @@
             function validar(correo){
                  var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
                  var esValido= expReg.test(correo);
-                 if(esValido===true) {
+                 if(esValido !== false) {
                     alert("Correo valido");
                     }else{
-                    alert("Correo invalido"); location.reload(true);    
+                    alert("Correo invalido"); location.reload(true);
                     }
             }
         </script>

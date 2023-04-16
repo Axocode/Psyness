@@ -16,12 +16,14 @@
         
     </head>
     <body>
-        <%
+        <%  
+            HttpSession sesion = request.getSession();
             String correoi = null;
             String contrai = null;
             List<Idatos>lista = null;
             String Icorreo = null;
             String Icontra = null;
+            
             
             session = request.getSession( true );
             if( session != null )
@@ -48,7 +50,7 @@
                 <div class="col-md-6 right">
                      <div class="input-box">
                         <header>Iniciar Sesion</header>
-                        <form id="form2">
+                        <form id="form2" >
                             <div class="input-field">
                                 <input id="correoi" name="correoi" value="<%=correoi%>" type="text" class="input"/>
                                 <label for="correoi">Correo</label>
@@ -61,7 +63,7 @@
                                 <input type="submit" id="comprobar" name="<%=accion%>" class="submit" />     
                             </div>
                             <div class="signin">
-                                <span>No tienes una cuenta?<a href="index.jsp">Crear cuenta</a></span>
+                                <span>No tienes una cuenta? <a href="index.jsp">Crear cuenta</a></span>
                             </div>
                         </form>
                      </div>
@@ -69,11 +71,6 @@
             </div>
         </div>
     </div>
-         
-        
-            
-        
-            
                                 <!--<form id="form2">
             <table border="1">
                 <tr>                   
@@ -120,12 +117,25 @@
                                         </div>
                                     </div> 
                                
-                             <%}
+                             <%
+                                 response.sendRedirect("feed.jsp");
+                                 }
+
                                 else{
-                                out.println("Correo o contraseña incorrectos");        
+                                    
                                 }
                         }  
                     }
-                    %>    
+                    %>  
+                    
+                    <script>
+                    document.getElementsByTagName("input")[0].value = "";
+                    document.getElementsByTagName("input")[1].value = "";
+                    </script>
+                    <script>
+                        function error(){
+                        document.write("Contraseña o Correo incorrecto");
+                        }
+                    </script>
     </body>
 </html>
