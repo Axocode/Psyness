@@ -118,6 +118,10 @@
                                     </div> 
                                
                              <%
+                                String cadenaEsp = datos.getIusuario().replaceAll(" ","").toLowerCase();
+                                sesion.setAttribute("Idprima", cadenaEsp);
+                                sesion.setAttribute("INombreuser", datos.getIusuario());
+
                                  response.sendRedirect("feed.jsp");
                                  }
 
