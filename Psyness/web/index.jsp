@@ -89,6 +89,7 @@
                 cadenaEsp = Iusuario.replaceAll(" ","").toLowerCase();
                 datos.setIid(cadenaEsp);
                 sesion.setAttribute("Idprima", cadenaEsp);
+                sesion.setAttribute("INombreuser", Iusuario);
                 
                 if( "Submit".equals( guardar ) )
                 {

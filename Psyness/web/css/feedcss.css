@@ -40,8 +40,8 @@
 /*--Estilos Sidebar Del Menú--*/
 
 .contenedor .sidebar{
-    background: #000;
-    color: #fff;
+    background: #141414;
+    color: #141414;
     grid-column: 1 / 2;
     grid-row: span 5;
     height: 100vh;
@@ -133,8 +133,8 @@
 /*--Estilos Del Cuadro Publicar--*/
 
 .contenedor .publicar{
-    background: #000;
-    color: #fff;
+    background: #141414;
+    color: #141414;
     grid-column:  2 / 4;
     margin-top: 20px;
     border-radius: 25px;
@@ -377,7 +377,7 @@
 /*--Estilos Sidebar Del Perfil--*/
 
 .contenedor .sidebar_perfil{
-    background: #000;
+    background: #141414;
     color: #fff;
     grid-column: 4 / 5;
     text-align: center;

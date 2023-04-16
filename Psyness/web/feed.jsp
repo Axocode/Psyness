@@ -23,13 +23,21 @@
         
     </head>
     <body>
-        
+        <%
+                    HttpSession sesion = request.getSession();
+                    String Iidex;
+                    if (sesion.getAttribute("Idprima") != null)  {
+                    Iidex = sesion.getAttribute("Idprima").toString();
+                        }else{
+                        out.print("<script>location.replace('index.jsp');</script>");
+            }                        
+        %>
         <div class="general">
             <div class="contenedor">
                 <div class="sidebar">
                     <div class="img">
                         <!-------Image-------->
-                        <img src="images/logosidebar.jpg" width="220">
+                        <a href="feed.jsp"><img src="images/logosidebar.jpg" width="220"></a>
                     </div>
                     <div class="input-box">
                         <input type="text" placeholder="Buscar">
@@ -45,7 +53,7 @@
                         </nav>
                     </div>
                     <div class="cerrarsesion">
-                        <a href="login.jsp">Cerrar Sesión</a>
+                        <a href="index.jsp?cerrar=true">Cerrar Sesión</a>
                     </div>
                 </div>
                 <div class="publicar">
@@ -124,22 +132,22 @@
                         </nav>    
                     </div>
                 </div>
-                <div class="sidebar_perfil">
+                    
+                    <div class="sidebar_perfil">
                     <div class="img">
                         <!-------Image-------->
                         <img src="images/perfilsidebar.png" width="140">
-                        <a href=""></a>
                     </div>
-                    <div class="info-perfil">
+                    <a href="profile.jsp" style="text-decoration:none" style="color:#fff;"  ><div class="info-perfil">
                         <nav>
                             <h3><i class="fa-solid fa-heart"></i> 500k</h3>
                             <h3><i class="fa-solid fa-paper-plane"></i> 16</h3>
                             <h3><i class="fa-sharp fa-solid fa-star"></i> 12</h3>
                         </nav>
                         <div class="texto">
-                            <h3>Nombre del usuario</h3>
+                            <h3><%=sesion.getAttribute("INombreuser")%></h3>
                         </div>
-                    </div>
+                    </div></a>
                 </div>
             </div>
         </div>
