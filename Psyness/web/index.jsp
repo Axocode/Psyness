@@ -23,6 +23,7 @@
     
     </head>
     <body>
+        
         <%
             HttpSession sesion = request.getSession();
             String Iusuario = null;
@@ -90,6 +91,7 @@
                 datos.setIid(cadenaEsp);
                 sesion.setAttribute("Idprima", cadenaEsp);
                 sesion.setAttribute("INombreuser", Iusuario);
+                sesion.setAttribute("ICorreos", Icorreo);
                 
                 if( "Submit".equals( guardar ) )
                 {
@@ -134,7 +136,7 @@
                                 <label for="edad">Edad</label>
                             </div>
                             <div class="input-field">
-                                <input id="correo" name="correo" value="<%=datos.getIcorreo()%>" type="text" class="input" required/>
+                                <input id="correo" name="correo" value="<%=datos.getIcorreo()%>" type="text" class="input" required onblur="validar(form.correo.value)" />
                                 <label for="correo">Correo</label>
                             </div>
                             <div class="input-field">
@@ -154,5 +156,16 @@
         </div>
     </div>
         <% } %>
+        <script>
+            function validar(correo){
+                 var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+                 var esValido= expReg.test(correo);
+                 if(esValido===true) {
+                    alert("Correo valido");
+                    }else{
+                    alert("Correo invalido"); location.reload(true);    
+                    }
+            }
+        </script>
     </body>
 </html>
