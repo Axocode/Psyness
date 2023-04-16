@@ -61,7 +61,7 @@
                                 <input type="submit" id="comprobar" name="<%=accion%>" class="submit" />     
                             </div>
                             <div class="signin">
-                                <span>No tienes una cuenta?<a href="index.jsp">Crear cuenta</a></span>
+                                <span>No tienes una cuenta? <a href="index.jsp">Crear cuenta</a></span>
                             </div>
                         </form>
                      </div>
