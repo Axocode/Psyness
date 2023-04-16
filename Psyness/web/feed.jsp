@@ -10,6 +10,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <%
+                    HttpSession sesion = request.getSession();
+                    String Iidex;
+                    if (sesion.getAttribute("Idprima") != null)  {
+                    Iidex = sesion.getAttribute("Idprima").toString();
+                        }else{
+                        out.print("<script>location.replace('index.jsp');</script>");
+            }                        
+        %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,15 +32,7 @@
         
     </head>
     <body>
-        <%
-                    HttpSession sesion = request.getSession();
-                    String Iidex;
-                    if (sesion.getAttribute("Idprima") != null)  {
-                    Iidex = sesion.getAttribute("Idprima").toString();
-                        }else{
-                        out.print("<script>location.replace('index.jsp');</script>");
-            }                        
-        %>
+        
         <div class="general">
             <div class="contenedor">
                 <div class="sidebar">
@@ -132,22 +133,21 @@
                         </nav>    
                     </div>
                 </div>
-                    
-                    <div class="sidebar_perfil">
+                <div class="sidebar_perfil">
                     <div class="img">
                         <!-------Image-------->
                         <img src="images/perfilsidebar.png" width="140">
                     </div>
-                    <a href="profile.jsp" style="text-decoration:none" style="color:#fff;"  ><div class="info-perfil">
+                    <div class="info-perfil">
                         <nav>
                             <h3><i class="fa-solid fa-heart"></i> 500k</h3>
                             <h3><i class="fa-solid fa-paper-plane"></i> 16</h3>
                             <h3><i class="fa-sharp fa-solid fa-star"></i> 12</h3>
                         </nav>
                         <div class="texto">
-                            <h3><%=sesion.getAttribute("INombreuser")%></h3>
+                            <a href="profile.jsp""><h3><%=sesion.getAttribute("INombreuser")%></h3></a>
                         </div>
-                    </div></a>
+                    </div>
                 </div>
             </div>
         </div>

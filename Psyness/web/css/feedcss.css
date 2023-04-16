@@ -13,7 +13,7 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-attachment: fixed;
     background-size: cover;
-    height: 50em;
+    height: 55em;
     color: #000;
     font-family: 'Roboto', sans-serif;
     
@@ -232,6 +232,7 @@
     cursor: pointer;
     transition: all 500ms ease;
     transform: translateY(-10%);
+    color: #fff;
 }
 
 .publicar .menu-modal .subir .btn-icon{
@@ -418,6 +419,11 @@
     color: #A770EF;
 }
 
+.sidebar_perfil .info-perfil .texto a{
+    color:#fff;
+    text-decoration: none;
+}
+
 .sidebar_perfil .info-perfil .texto h3{
     margin-top: 6vh;
     font-size: 24px;
@@ -428,6 +434,10 @@
     background: #1f1f1f;
     transform: scale(103%);
     cursor: pointer;
+}
+
+.sidebar_perfil .info-perfil .texto a:hover{
+    color: #DADAD2;
 }
 
 .sidebar .cerrarsesion{
