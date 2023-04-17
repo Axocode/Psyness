@@ -61,7 +61,7 @@
                     <div class="checkbox">
                         <input id="btn-modal" value="<%%>" type="checkbox" placeholder="Buscar">
                         <label for="btn-modal" class="lbl-modal">
-                            ¿Deseas publicar algo? 
+                            ¿Deseas publicar? 
                         </label>
                     </div>
                     <div class="modal">
@@ -111,9 +111,7 @@
                         curabitur morbi habitasse, ut convallis congue ad conubia pretium. Ac sagittis
                         conubia sem metus cubilia neque faucibus integer dictumst, inceptos risus odio 
                         netus nisi lobortis pulvinar montes aliquam erat, quis vehicula lacinia sed urna
-                        orci malesuada est. Sagittis rutrum arcu condimentum vel facilisis at velit,
-                        curabitur orci habitant porta pharetra enim, ultricies egestas potenti elementum
-                        suspendisse laoreet.</p><br><br><br>
+                        orci malesuada est. </p><br><br><br>
                     </div>
                     <div class="pie-publi">
                         <nav>
@@ -134,18 +132,15 @@
                     </div>
                 </div>
                 <div class="sidebar_perfil">
-                    <div class="img">
-                        <!-------Image-------->
-                        <img src="images/perfilsidebar.png" width="140">
-                    </div>
+
                     <div class="info-perfil">
                         <nav>
-                            <h3><i class="fa-solid fa-heart"></i> 500k</h3>
-                            <h3><i class="fa-solid fa-paper-plane"></i> 16</h3>
-                            <h3><i class="fa-sharp fa-solid fa-star"></i> 12</h3>
+                            <h1><i class="fa-solid fa-heart"></i> 500k</h1>
+                            <h1><i class="fa-solid fa-paper-plane"></i> 16</h1>
+                            <h1><i class="fa-sharp fa-solid fa-star"></i> 12</h1>
                         </nav>
                         <div class="texto">
-                            <a href="profile.jsp""><h3><%=sesion.getAttribute("INombreuser")%></h3></a>
+                            <a href="profile.jsp""><h1><%=sesion.getAttribute("INombreuser")%></h1></a>
                         </div>
                     </div>
                 </div>
