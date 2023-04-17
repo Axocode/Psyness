@@ -24,7 +24,7 @@
     </head>
     <body>
         
-        <%
+        <%      
             String editar = null;
             String contrai = "";
             String actualizar = "guardar";
@@ -93,12 +93,13 @@
                 
                 sesion.setAttribute("Idprima", cadenaEsp);
                 sesion.setAttribute("INombreuser", Iusuario);
-                sesion.setAttribute("ICorreos", Icorreo);
+
                 
                 if( "Submit".equals( guardar ) )
                 {
                     lista.add( datos );
                     response.sendRedirect("feed.jsp");
+                    
                 }
         %>
             
@@ -130,7 +131,7 @@
                         <header>Crear cuenta</header>
                         <form id="form1" method="POST">
                             <div class="input-field">
-                                <input id="user" name="user" value="<%=datos.getIusuario()%>" type="text" class="input" required/>
+                                <input id="user" name="user" value="<%=datos.getIusuario()%>" type="text" class="input"  minlength="5" maxlength="18" required/>
                                 <label for="user">Nombre de Usuario</label>
                             </div>
                             <div class="input-field">
