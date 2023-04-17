@@ -6,13 +6,35 @@
 <!DOCTYPE html>
 <html>
     <%
-                    HttpSession sesion = request.getSession();
-                    String Iidex;
-                    if (sesion.getAttribute("Idprima") != null)  {
-                    Iidex = sesion.getAttribute("Idprima").toString();
-                        }else{
-                        out.print("<script>location.replace('index.jsp');</script>");
-            }                        
+        HttpSession sesion = request.getSession();
+        String Iidex;
+        List<Idatos>lista = null;
+        String nombre = null;
+        String edad = null;
+
+        if (sesion.getAttribute("Idprima") != null)  {
+        Iidex = sesion.getAttribute("Idprima").toString();
+        }else{
+        out.print("<script>location.replace('index.jsp');</script>");
+        }
+        session = request.getSession( true );
+        
+        if( session != null )
+            {
+            if( session.getAttribute("lista") != null )
+                {
+                    lista = (List)session.getAttribute( "lista" );
+                }
+            }
+                            
+            if(  lista != null && !lista.isEmpty() ){
+                for (Idatos datos : lista){
+                    if ( request.getParameter("id").equals(datos.getIid()) ){
+                        nombre = datos.getIusuario();
+                        edad = datos.getIedad();                    
+                    }
+                }
+            }
         %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -57,11 +79,19 @@
                         <img src="images/perfilsidebar.png" class="imgRound">
                     </div>
                     <div class="username">
-                        <p>Chumpi uwu lvl16</p>
+                        <p><%=nombre%> <%=edad%></p>
                     </div>
                     <div class="btn-enviar">
+                        <%
+                            if (!request.getParameter("id").equals(sesion.getAttribute("Idprima"))) {
+                                    
+                                
+                            %>
                         <input type="checkbox" id="btn-follow" class="submit"/>
                         <label for="btn-follow" class="lbl-follow">Seguir</label>
+                        <%
+                            }
+                        %>
                     </div>
                     <div class="menui">
                         <!--<ul class="listita">

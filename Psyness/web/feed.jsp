@@ -140,7 +140,7 @@
                             <h1><i class="fa-sharp fa-solid fa-star"></i> 12</h1>
                         </nav>
                         <div class="texto">
-                            <a href="profile.jsp""><h1><%=sesion.getAttribute("INombreuser")%></h1></a>
+                            <a href="profile.jsp?id=<%=sesion.getAttribute("Idprima")%> "> <h3><%=sesion.getAttribute("INombreuser")%></h3></a>
                         </div>
                     </div>
                 </div>
