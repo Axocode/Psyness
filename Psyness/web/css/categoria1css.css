@@ -45,7 +45,7 @@
     grid-column: 1 / 2;
     grid-row: span 5;
     height: 100vh;
-    
+    position: fixed
     
 }
 .contenedor .sidebar .img{

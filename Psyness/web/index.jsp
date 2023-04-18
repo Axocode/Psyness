@@ -44,6 +44,9 @@
             
             if (request.getParameter("cerrar")!= null) {
                     session.invalidate();
+                    %>
+                    <script>window.location.href = "feed.jsp";</script>
+                    <%
                 }
                 
             session = request.getSession( true );

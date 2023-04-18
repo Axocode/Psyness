@@ -72,7 +72,7 @@
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer
         </p>
         <p class="card-text"><small class="text-muted">Creado por <%=sesion.getAttribute("INombreuser")%></small></p><br>
-        <a href=# type="button" class="btn btn-outline-dark">Ver Publicacion</a>
+        <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02ca1GFGaHjWJV9BCdHney3DiFfsGQz3CNQaEZvE7S73yVo8N7WF7HXwKoCtCgSCgwl&id=100083354409895" target="_BLANK" type="button" class="btn btn-outline-dark">Ver Publicacion</a>
       </div>
     </div>
   </div>
@@ -89,7 +89,7 @@
         <h3 class="card-title">Porcentaje de la poblacion no binaria</h3>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This content is a little bit longer.</p>
         <p class="card-text"><small class="text-muted">Creado por <%=sesion.getAttribute("INombreuser")%> </small></p><br>
-        <a href=# type="button" class="btn btn-outline-dark">Ver Publicacion</a>
+        <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02no1sSX9QwaL6QuZLCh2txhXKkhSLrjquVQ9QdFZkKPbn624YnLpmWK6RYf3zPcnNl&id=100083354409895" target="_BLANK" type="button" class="btn btn-outline-dark">Ver Publicacion</a>
       </div>
     </div>
   </div>

@@ -20,7 +20,15 @@
         
     </head>
     <body>
-        
+        <%
+                    HttpSession sesion = request.getSession();
+                    String Iidex;
+                    if (sesion.getAttribute("Idprima") != null)  {
+                    Iidex = sesion.getAttribute("Idprima").toString();
+                        }else{
+                        out.print("<script>location.replace('index.jsp');</script>");
+            }                        
+        %>
         <div class="general">
             <div class="contenedor">
                 <div class="sidebar">
@@ -58,18 +66,18 @@
                                 <div class="col">
                                     <i class="fa-solid fa-user"></i>
                                     <span class="titulo-detalle">Departamento</span>
-                                    <p>*Aqui va la info del departamento*</p>
+                                    <p>Servicio de Orientacion Psicologica</p>
 
                                 </div>
                                 <div class="col">
                                     <i class="fa-solid fa-phone"></i>
                                     <span class="titulo-detalle">Contacto</span>
-                                    <p>*Aqui va la info del teléfono del departamento*</p>
+                                    <p>800 710 24 96 Y 800 221 31 09</p>
                                 </div>
                                 <div class="col">
                                     <i class="fa-sharp fa-solid fa-location-dot"></i>
                                     <span class="titulo-detalle">Ubicación</span>
-                                    <p>*Aqui va la info de la ubicación del departamento*</p>
+                                    <p>México</p>
                                 </div>
                             </div>
                         </div>

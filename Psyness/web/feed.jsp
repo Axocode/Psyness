@@ -32,7 +32,7 @@
                         }else{
                         out.print("<script>location.replace('index.jsp');</script>");
             }                        
-        %>
+            %>
         <div class="general">
             <div class="contenedor">
                 <div class="sidebar">
