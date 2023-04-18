@@ -64,7 +64,7 @@
       <div class="card-body">
         <h5 class="card-title">Violencia de genero</h5>
         <p class="card-text">Cualquier acto con el que se busque dañar a una persona por su género..</p>
-        <a href="#" type="button" class="btn btn-outline-dark">Ver mas...</a>
+        <a href="categoria1.jsp" type="button" class="btn btn-outline-dark">Ver mas...</a>
       </div>
     </div>
   </div>
