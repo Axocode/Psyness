@@ -11,6 +11,8 @@
         List<Idatos>lista = null;
         String nombre = null;
         String edad = null;
+        int seguidores = 0;
+        int seguidos = 0;
 
         if (sesion.getAttribute("Idprima") != null)  {
         Iidex = sesion.getAttribute("Idprima").toString();
@@ -31,7 +33,8 @@
                 for (Idatos datos : lista){
                     if ( request.getParameter("id").equals(datos.getIid()) ){
                         nombre = datos.getIusuario();
-                        edad = datos.getIedad();                    
+                        edad = datos.getIedad();
+                        seguidos = datos.getIseguidos();
                     }
                 }
             }
@@ -103,10 +106,10 @@
                         </ul>>-->
                     </div>
                     <div class="seguidos">
-                        <h4>43 seguidos</h4>
+                        <h4><%=seguidos%> seguidos</h4>
                     </div>
                     <div class="seguidores">
-                        <h4>13 seguidores</h4>
+                        <h4><%=seguidores%> seguidores</h4>
                     </div>
                     <div class="publis">
                         <h4>1 publicaciones</h4>

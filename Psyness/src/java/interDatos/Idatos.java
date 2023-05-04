@@ -10,7 +10,8 @@ public class Idatos implements Serializable {
     private String Icorreo;
     private String Iedad;
     private String Iid;
-    private String Iactiva;
+    private int Iseguidores;
+    private int Iseguidos;
 
     public String getIusuario() {
         return Iusuario;
@@ -52,13 +53,22 @@ public class Idatos implements Serializable {
         this.Iedad = Iedad;
     }
 
-    public String getIactiva() {
-        return Iactiva;
+    public int getIseguidores() {
+        return Iseguidores;
     }
 
-    public void setIactiva(String Iactiva) {
-        this.Iactiva = Iactiva;
+    public void setIseguidores(int Iseguidores) {
+        this.Iseguidores = Iseguidores;
     }
+
+    public int getIseguidos() {
+        return Iseguidos;
+    }
+
+    public void setIseguidos(int Iseguidos) {
+        this.Iseguidos = Iseguidos;
+    }
+
     
 
 }

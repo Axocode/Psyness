@@ -21,7 +21,6 @@
             int i = 0;
             List<Idatos> lista = null;
             String Iid = null;
-            String borrar = null;
             session = request.getSession( true );
             
             if( session != null )
@@ -32,11 +31,6 @@
                 }
             }
             Iid = request.getParameter( "id" );
-            borrar = request.getParameter( "borrar" );
-            if( "Submit".equals( borrar ) )
-            {
-                lista.remove( Integer.parseInt(Iid) );
-            }
         %>
             
         
@@ -48,7 +42,8 @@
                 <td>Contraseña</td>
                 <td>Correo</td>
                 <td>Edad</td>
-                <td>Activa</td>
+                <td>Seguidores</td>
+                <td>Seguidos</td>
                  <td>Acciones</td>
             </tr>
             <%
@@ -64,7 +59,8 @@
                 <td><%=datos.getIcontra()%></td>
                 <td><%=datos.getIcorreo()%></td>
                 <td><%=datos.getIedad()%></td>
-                <td><%=datos.getIactiva()%></td>
+                <td><%=datos.getIseguidores()%></td>
+                <td><%=datos.getIseguidos()%></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                         <button type="button" class="btn btn-danger"><a href="tabla.jsp?id=<%=i%>&borrar=Submit" class="link-light">Borrar</a> </button>

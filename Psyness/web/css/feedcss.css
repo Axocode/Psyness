@@ -377,6 +377,8 @@
 /*--Estilos Sidebar Del Perfil--*/
 
 .contenedor .sidebar_perfil{
+    position: fixed;
+    z-index: 10000000;
     background: #141414;
     color: #fff;
     grid-column: 4 / 5;

@@ -18,7 +18,8 @@ public class Iseria {
             datos.setIcontra(String.format("Alumno %d", i));
             datos.setIcorreo(String.format("Alumno %d", i));
             datos.setIid(String.format("Alumno %d", i));
-            datos.setIactiva(String.format("Alumno %d", i));
+            datos.setIseguidores((int)(i));
+            datos.setIseguidos((int)(i));
             datos.setIedad(String.format("Alumno %d", i));
             Lista.add(datos);
         }

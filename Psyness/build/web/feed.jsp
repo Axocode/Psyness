@@ -3,9 +3,12 @@
     Created on : 10/04/2023, 10:22:31 AM
     Author     : admin
 --%>
+<%@page import="interPub.Ireqs"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="interDatos.Idatos"%>
+<%@page import="interPub.Ireqs"%>
+
 <%@page session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,6 +36,15 @@
                         out.print("<script>location.replace('index.jsp');</script>");
             }                        
             %>
+            <%
+            int i = 0;
+            List<Ireqs> listita = null;
+            String Iid = null;
+            session = request.getSession( true );
+            
+            
+            Iid = request.getParameter( "id" );
+        %>
         <div class="general">
             <div class="contenedor">
                 <div class="sidebar">
@@ -91,7 +103,15 @@
                         </nav>
                     </div>
                 </div>
+                         
                 <div class="contenido-publi">
+                 <%
+              if( listita != null && !listita.isEmpty() )
+              {
+                for( Ireqs Redatos : listita)
+                {
+            %>          
+                         <div class="contenido-publi">
                     <div class="encabezado">
                         <nav>
                             <div class="img">
@@ -129,15 +149,69 @@
                                 </div>
                             </div>
                         </nav>    
+                     
+                    </div>
+                    </div>
+                <%
+                                    }
+}
+else{
+
+                                    %>
+                                     <div class="contenido-publi">
+                    <div class="encabezado">
+                        <nav>
+                            <div class="img">
+                                <img src="images/perfilsidebar.png" width="60">
+                            </div>
+                            <div class="username">
+                                <h3>Nombre del usuario</h3>
+                            </div>
+                            <div class="btn-enviar">
+                                <input type="checkbox" id="btn-follow" class="submit"/>
+                                <label for="btn-follow" class="lbl-follow">Seguir</label>
+                            </div>
+                        </nav>    
+                    </div>
+                    <div class="contenido-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, laoreet a malesuada
+                        curabitur morbi habitasse, ut convallis congue ad conubia pretium. Ac sagittis
+                        conubia sem metus cubilia neque faucibus integer dictumst, inceptos risus odio 
+                        netus nisi lobortis pulvinar montes aliquam erat, quis vehicula lacinia sed urna
+                        orci malesuada est. </p><br><br><br>
+                    </div>
+                    <div class="pie-publi">
+                        <nav>
+                            <div class="fecha">
+                                <h3>4-Abril-2023 6:03</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="btn-icon">
+                                    <h3><i class="fa-solid fa-heart"></i> 500k</h3>
+                                </div>
+                            </div>
+                            <div class="shares">
+                                <div class="btn-icon">
+                                    <h3><i class="fa-sharp fa-solid fa-star"></i> 12</h3>
+                                </div>
+                            </div>
+                        </nav>    
+                     
+                    </div>
                     </div>
                 </div>
+                     <%
+                                    }
+
+                                    %>           
+                                    
                 <div class="sidebar_perfil">
                         
                     <div class="info-perfil">
                         <nav>
-                            <h1><i class="fa-solid fa-heart"></i> 500k</h1>
-                            <h1><i class="fa-solid fa-paper-plane"></i> 16</h1>
-                            <h1><i class="fa-sharp fa-solid fa-star"></i> 12</h1>
+                            <h1><i class="fa-solid fa-heart"></i> 0</h1>
+                            <h1><i class="fa-solid fa-paper-plane"></i> 1</h1>
+                            <h1><i class="fa-sharp fa-solid fa-star"></i> 0</h1>
                         </nav>
                         <div class="texto">
                             <a href="profile.jsp?id=<%=sesion.getAttribute("Idprima")%> "> <h3><%=sesion.getAttribute("INombreuser")%></h3></a>
