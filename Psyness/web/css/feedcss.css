@@ -456,7 +456,22 @@
 .sidebar .cerrarsesion a:hover{
     color: #fff;
 }
-
+.btn-light {
+    --bs-btn-color: #000;
+    --bs-btn-bg: #ffffff !important;
+    --bs-btn-border-color: #ffffff !important;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #ffffff !important;
+    --bs-btn-hover-border-color: #ffffff !important;
+    --bs-btn-focus-shadow-rgb: 211,212,213;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #ffffff !important;
+    --bs-btn-active-border-color: #ffffff !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #ffffff !important;
+    --bs-btn-disabled-border-color: #ffffff !important;
+}
     @media (max-width: 1200px){
         .contenedor .sidebar_perfil{
             background: #141414;
