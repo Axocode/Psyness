@@ -52,11 +52,11 @@
                         <header>Iniciar Sesion</header>
                         <form id="form2" >
                             <div class="input-field">
-                                <input id="correoi" name="correoi" value="<%=correoi%>" type="text" class="input"/>
+                                <input id="correoi" name="correoi" value="<%=correoi%>" type="text" class="input" required onblur="validar(form.correo.value)"/>
                                 <label for="correoi">Correo</label>
                             </div>
                             <div class="input-field">
-                                <input id="passi" name="passi" value="<%=contrai%>" type="password" class="input"/> 
+                                <input id="passi" name="passi" value="<%=contrai%>" type="password" class="input" required onblur="validar(form.correo.value)"/> 
                                 <label for="passi">Contraseña</label>
                             </div>
                             <div class="input-field">
