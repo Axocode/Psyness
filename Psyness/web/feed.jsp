@@ -73,7 +73,7 @@
                 <div class="publicar">
                     <div class="checkbox">
                     <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      ¿Que deseas publicar?
+                      ¿Que desea publicar?
                     </button>
                         
                     </div>
