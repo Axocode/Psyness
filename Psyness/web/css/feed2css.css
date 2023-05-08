@@ -1,0 +1,203 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 7 may. 2023, 20:34:07
+    Author     : Admin
+*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background: #E4E4E4;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 5%;
+
+}
+.left-sidebar{
+    background: #cbdffa;
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+
+}
+.right-sidebar{
+    background: #cbdffa;
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    
+}
+.main-content{
+    flex-basis: 47%;
+
+}
+
+
+
+/*
+MAIN CONTENT
+*/
+
+
+
+
+
+/*
+Publicar
+*/
+.write-post-container{
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+}
+.user-profile{
+    display: flex;
+    align-items: center;
+}
+.user-profile img{
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.user-profile p{
+    margin-bottom: -5px;
+    font-weight: 500;
+    color: #626262;
+}
+.user-profile small{
+    font-size: 12px;
+}
+.post-input-container .checkbox{
+    box-sizing: border-box;
+    font-size: 20px;
+    width: 300px;
+    margin-left: 70px;
+    background: #f6f6f6;
+    padding: 1px 58px;
+    border-radius: 87px;
+    cursor: pointer;
+    transition: all 500ms ease;
+    transform: translateX(-25%);
+}
+
+
+.user-profile-modal{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 17px;
+}
+.user-profile-modal img{
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.user-profile-modal p{
+    margin-bottom: -5px;
+    font-weight: 500;
+    color: #000000;
+}
+.user-profile-modal small{
+    font-size: 12px;
+}
+
+
+
+.post-input-container{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+
+
+}
+.post-input-container textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+
+}
+.modal-footer{
+    display: block !important;
+    flex-shrink: 0;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(0.3rem - 1px);
+    border-bottom-left-radius: calc(0.3rem - 1px);
+}
+
+.add-post-links{
+    display: flex;
+    margin-top: 10px;
+
+}
+.add-post-links a{
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    color: #626262;
+    margin-right:77px;
+    font-size: 13px;
+
+}
+
+.add-post-links a img{
+    width: 22px;
+    margin-right: 11px;
+
+    
+}
+.post-container{
+    width: 100%;
+    background: #f6f6f6;
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+    margin: 20px 0;
+}
+.post-text{
+    color: #626262;
+    font-weight: 500;
+}
+.post-img{
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.post-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.activity-icons div img{
+    width: 18px;
+    margin-right: 10px;
+}
+.activity-icons div{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.activity-icons a{
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    color: #626262;
+    margin-right:6px;
+    font-size: 13px;
+
+}
