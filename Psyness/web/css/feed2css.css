@@ -201,3 +201,57 @@ Publicar
     font-size: 13px;
 
 }
+
+/*Side bar Derecha*/
+
+/*@media screen and (max-width: 600px){*/
+    .right-sidebar{
+        background: #cbdffa;
+        flex-basis: 25%;
+        position: sticky;
+        top: 10px;
+        align-self: flex-start;  
+        
+    }
+/*}*/
+
+
+    .sidebar-profile{    
+        width: 130%;
+        height: 10%;
+        background: #fff;
+        border-radius: 6px;
+        padding: 20px;
+        color: #626262;
+    }
+
+.suggested{
+    margin-top: 20px;
+    width: 130%;
+    height: 70%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+
+}
+
+#username{
+    font-size: 32px;
+}
+
+#foton{
+    height: 30%;
+    width: 30%;
+}
+
+.trends{
+    margin-top: 20px;
+    width: 130%;
+    height: 70%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+
+}
