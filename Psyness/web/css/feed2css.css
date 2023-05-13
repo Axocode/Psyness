@@ -201,6 +201,10 @@ Publicar
     font-size: 13px;
 
 }
+.btn-outline-light{
+    color: #000000;
+    padding: 4.375rem 0.75rem;
+}
 
 /*Side bar Derecha*/
 

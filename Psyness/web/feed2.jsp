@@ -69,7 +69,8 @@
                             <div class="post-input-container">
                                 <textarea rows="3" placeholder="Que estas Pensando,  Axel?"></textarea>
                             </div>
-                            
+                            <button type="button" class="btn btn-outline-light"><span><i class="fa-regular fa-file-plus" style="color: #000000;"></i>
+                                </span>Agregar Imagen</button>
                             <div class="modal-footer">
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-primary" type="button">Publicar</button>
