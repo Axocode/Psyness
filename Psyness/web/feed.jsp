@@ -102,9 +102,6 @@
                   </div>
                 </div>
                                   
-                    
-                    
-                    
                     <div class="modal">
                         <div class="contenedor-modal">
                             <header>--Bienvenido--</header>
@@ -132,7 +129,6 @@
                         </nav>
                     </div>
                      
-                                    
                 </div>
                          
                 <div class="contenido-publi">
@@ -187,7 +183,6 @@
                                     }
 }
 else{
-
                                     %>
                                      <div class="contenido-publi">
                     <div class="encabezado">
@@ -233,7 +228,6 @@ else{
                 </div>
                      <%
                                     }
-
                                     %>           
                                     
                 <div class="sidebar_perfil">

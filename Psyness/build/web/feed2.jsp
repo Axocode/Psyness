@@ -20,14 +20,88 @@
         <!-----Bootstrap------->
     <link rel="stylesheet" href="css/feed2css.css">
     <script src="https://kit.fontawesome.com/54fa9899e2.js" crossorigin="anonymous"></script>
+        <!-----Boxicons------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg"/>    
+    
     
 </head>
 <body>
     <div class="container">
         <!-----------------------------------left-sidebar(YORCH)-------------------------------------------------->
-        <div class="left-sidebar">
-
+        <div class="left_sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    
+                    <div class="logo_name"><span>P</span>syness</div>
+                    
+                </div>
+            <i class="fas fa-bars" id="btn"></i>    
+            </div>
+            
+            <ul class="nav_list">
+                <li>
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar">
+                </li>
+                
+                <li>
+                    <a href="#">
+                        <i class="fa-sharp fa-solid fa-house"></i>
+                        <span class="links_name">Inicio</span>
+                    </a>
+                    <!---<span class="links_name">Inicio</span>---->
+                </li> 
+                
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-venus-mars"></i>
+                        <span class="links_name">Red de género</span>
+                    </a>
+                    <!---<span class="links_name">Inicio</span>---->
+                </li> 
+                
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <span class="links_name">Datacenter</span>
+                    </a>
+                    <!---<span class="links_name">Inicio</span>---->
+                </li>
+                
+                <li>
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <span class="links_name">Settings</span>
+                    </a>
+                    <!---<span class="links_name">Inicio</span>---->
+                </li>
+            </ul>
+            
+            <div class="logout_sesion">
+                <a href="login.jsp">
+                    <span class="texto">Cerrar Sesion</span>
+                    <i class="fas fa-sign-out" id="log_out"></i>
+                </a>
+            </div>
         </div>
+               
+                        <!--BURGUER-->
+        
+        <script>
+            let btn = document.querySelector("#btn");
+            let left_sidebar = document.querySelector(".left_sidebar");
+            let searchBtn = document.querySelector(".fa-search");
+            
+            btn.onclick = function() {
+                left_sidebar.classList.toggle("active");
+            }
+            searchBtn.onclick = function() {
+                left_sidebar.classList.toggle("active");
+            }
+            
+        </script>
+        
         <!-----------------------------------main-content(EXEL)--------------------------------------------------->
         <div class="main-content">
             <div class="write-post-container">
@@ -47,10 +121,7 @@
                         </button>
                     </div>
 
-
                         <!--MODAL-->
-                        
-                              
                               
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -64,7 +135,7 @@
                                 <div>
                                     <p>Usuario</p>
                                 </div>
-            
+                                    
                             </div>
                             <div class="post-input-container">
                                 <textarea rows="3" placeholder="Que estas Pensando,  Axel?"></textarea>
@@ -83,11 +154,8 @@
                     <div class="add-post-links">
                         <a href="#"><img src="images/camera.png">Agregar Img</a>
                         <a href="#"><img src="images/upload.png">Subir Imagen</a>
-
                     </div>
-                    
                 </div>
-
             </div>
 
             <div class="post-container">
@@ -97,7 +165,6 @@
                         <p>Usuario</p>
                         <small>Public</small>
                     </div>
-
                 </div>
                 <br>
                 <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui laboriosam voluptatum harum atque optio ipsa eum molestias tempore ex explicabo et cum, facilis facere deleniti, magni dicta enim aliquam?
@@ -145,7 +212,6 @@
                 </div>
             </div>
 
-
             <div class="post-container">
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png">
@@ -165,7 +231,6 @@
                 <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui laboriosam voluptatum harum atque optio ipsa eum molestias tempore ex explicabo et cum, facilis facere deleniti, magni dicta enim aliquam?
 
                 </p>
-                
                 <div class="post-row">
                     <div class="activity-icons">
                         <div><a href="#"><img src="images/heart.png">500k</a></div>
