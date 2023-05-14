@@ -26,14 +26,6 @@ body{
 
 }
 
-.right-sidebar{
-    background: #cbdffa;
-    flex-basis: 25%;
-    position: sticky;
-    top: 70px;
-    align-self: flex-start;
-    
-}
 .main-content{
     margin-left: 25%;
     flex-basis: 47%;
@@ -208,16 +200,17 @@ Publicar
 
 /*Side bar Derecha*/
 
-/*@media screen and (max-width: 600px){*/
-    .right-sidebar{
-        background: #cbdffa;
-        flex-basis: 25%;
+
+    .right-sidebar{  
+        width: 25%;
+        /*flex-basis: 25%;*/
         position: sticky;
         top: 10px;
         align-self: flex-start;  
-        margin-left: 10%;
+        /*margin-left: 10%;*/
     }
-/*}*/
+
+
 
 
     .sidebar-profile{    
@@ -229,6 +222,7 @@ Publicar
         color: #626262;
         box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
     }
+ 
 
 .suggested{
     margin-top: 20px;
@@ -261,6 +255,38 @@ Publicar
     color: #626262;
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
 
+}
+
+.feisbuk{
+    margin-top: 20px;
+    width: 76%;
+    height: 70%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    color: #626262;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.cont-feis{
+
+    width: 130%;
+    display: flex;
+    justify-content: center;
+}
+
+.fb-page{/*
+    margin-top: 20px;
+    width: 130%;
+    height: 70%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);*/
+    
 }
 
 

@@ -27,6 +27,8 @@
     
 </head>
 <body>
+    <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
     <div class="container">
         <!-----------------------------------left-sidebar(YORCH)-------------------------------------------------->
         <div class="left_sidebar">
@@ -303,6 +305,7 @@
                     </div>
                   </div>
             </div>
+            
             <div class="trends">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -326,6 +329,12 @@
                     </button>
                   </div>
             </div>
+            <div class="cont-feis">
+                <div class="feisbuk">
+                    <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100083354409895" data-tabs="timeline" data-width="270" data-height="" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/profile.php?id=100083354409895" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100083354409895">Red de Género Bátiz</a></blockquote></div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </body>
