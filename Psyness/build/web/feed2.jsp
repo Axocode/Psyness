@@ -52,21 +52,25 @@
         %>
     <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
-    <div class="container">
         <!-----------------------------------left-sidebar(YORCH)-------------------------------------------------->
-        <div class="left_sidebar">
+    <div class="container" id="container">
+        
+        <div class="burguer" id="burguer">
+            <i class="fas fa-bars" id="btn"></i>    
+        </div>
+        
+        <div class="left_sidebar" id="left_sidebar">
             <div class="logo_content">
                 <div class="logo">
                     
                     <div class="logo_name"><span>P</span>syness</div>
                     
                 </div>
-            <i class="fas fa-bars" id="btn"></i>    
             </div>
             
             <ul class="nav_list">
                 <li>
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" id="fa-search"></i>
                     <input type="text" placeholder="Buscar">
                 </li>
                 
@@ -114,18 +118,64 @@
                         <!--BURGUER-->
         
         <script>
+            
             let btn = document.querySelector("#btn");
+            let burguer_div = document.querySelector(".burguer");
             let left_sidebar = document.querySelector(".left_sidebar");
             let searchBtn = document.querySelector(".fa-search");
+            let main = document.querySelector(".main_content");
             
-            btn.onclick = function() {
-                left_sidebar.classList.toggle("active");
-            }
+            document.getElementById("btn").addEventListener("click", open_close_menu);
+            document.getElementById("searchBtn").addEventListener("click");
+            
+            function open_close_menu(){
+                    burguer_div.classList.toggle("burguer_move");
+                    left_sidebar.classList.toggle("active");
+                }
+                
+                if (window.innerWidth < 800){
+                    
+                    burguer_div.classList.add("burguer_move");
+                    left_sidebar.classList.add("active");
+                }
+            
+            window.addEventListener("resize", function(){
+                
+                if(window.innerWidth > 800){
+                    
+                    burguer_div.classList.remove("burguer_move");
+                    left_sidebar.classList.remove("active"); 
+                }
+                
+                if(window.innerWidth < 800){
+                    
+                    burguer_div.classList.add("burguer_move");
+                    left_sidebar.classList.add("active"); 
+                }
+            });
+            
+            /*
             searchBtn.onclick = function() {
                 left_sidebar.classList.toggle("active");
             }
+             */
             
-        </script>
+            /*
+             * 
+             * @type {type}
+            document.getElementById("btn").addEventListener("click", open_close_menu);
+            
+            var left_sidebar = document.getElementById("left_sidebar");
+            var btn = document.getElementById("btn");
+            var burguer = document.getElementById("burguer");
+            
+                function open_close_menu(){
+                    burguer.classList.toggle("burguer_move");
+                    left_sidebar.classList.toggle("menu_side_move");
+                }
+             */
+        </script>     
+            
         
         <!-----------------------------------main-content(EXEL)--------------------------------------------------->
         <div class="main-content">
