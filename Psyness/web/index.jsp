@@ -25,7 +25,7 @@
     <body>
         
         <%      
-            String editar = null;
+
             String contrai = "";
             String actualizar = "guardar";
             HttpSession sesion = request.getSession();
@@ -45,7 +45,7 @@
             if (request.getParameter("cerrar")!= null) {
                     session.invalidate();
                     %>
-                    <script>window.location.href = "feed.jsp";</script>
+                    <script>window.location.href = "feed2.jsp";</script>
                     <%
                 }
                 
@@ -63,20 +63,9 @@
             Icontra = request.getParameter( "pass" );
             Iedad = request.getParameter( "edad" );
             guardar = request.getParameter( "guardar" );
-            editar = request.getParameter( "editar" );
-            actualizar = request.getParameter( "actualizar" );
+
             
-            if( "Submit".equals( editar ) )
-            {
-                idx = Integer.parseInt( Iid );
-                if( idx < lista.size() )
-                {
-                    datos = lista.get( idx );
-                }
-                accion = "actualizar";
-            }
-            
-            if( "Submit".equals( guardar ) || "Submit".equals( actualizar ) )
+            if( "Submit".equals( guardar ) )
             {
                 if( "Submit".equals( guardar ) )
                 {
@@ -101,7 +90,7 @@
                 if( "Submit".equals( guardar ) )
                 {
                     lista.add( datos );
-                    response.sendRedirect("feed.jsp");
+                    response.sendRedirect("feed2.jsp");
                     
                 }
         %>
@@ -116,7 +105,7 @@
                 datos.setIcorreo("");
                 datos.setIedad("");
             }
-            if( !"Submit".equals( guardar ) && !"Submit".equals( actualizar ) )
+            if( !"Submit".equals( guardar ) )
             {
         %>  
         <div class="wrapper">
@@ -134,7 +123,7 @@
                         <header>Crear cuenta</header>
                         <form id="form1" method="POST">
                             <div class="input-field">
-                                <input id="user" name="user" value="<%=datos.getIusuario()%>" type="text" class="input"  minlength="5" maxlength="18" required/>
+                                <input id="user" name="user" value="<%=datos.getIusuario()%>" type="text" class="input"  minlength="6" maxlength="13" required/>
                                 <label for="user">Nombre de Usuario</label>
                             </div>
                             <div class="input-field">
@@ -168,9 +157,6 @@
                  var esValido= expReg.test(correo);
                  if(esValido !== false) {
                     alert("Correo valido");
-                    }else{
-                    alert("Correo invalido"); location.reload(true);
-                    }
             }
         </script>
     </body>

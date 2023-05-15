@@ -3,7 +3,12 @@
     Created on : 7 may. 2023, 20:33:13
     Author     : Admin
 --%>
-
+<%@page import="interPub.Ireqs"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="interDatos.Idatos"%>
+<%@page import="interPub.Ireqs"%>
+<%@page session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -27,28 +32,50 @@
     
 </head>
 <body>
+        <%
+                    HttpSession sesion = request.getSession();
+                    String Iidex;
+                    if (sesion.getAttribute("Idprima") != null)  {
+                    Iidex = sesion.getAttribute("Idprima").toString();
+                        }else{
+                        out.print("<script>location.replace('index.jsp');</script>");
+            }                        
+            %>
+            <%
+            int i = 0;
+            List<Ireqs> listita = null;
+            String Iid = null;
+            session = request.getSession( true );
+            
+            
+            Iid = request.getParameter( "id" );
+        %>
     <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
-    <div class="container">
         <!-----------------------------------left-sidebar(YORCH)-------------------------------------------------->
-        <div class="left_sidebar">
+    <div class="container" id="container">
+        
+        <div class="burguer" id="burguer">
+            <i class="fas fa-bars" id="btn"></i>    
+        </div>
+        
+        <div class="left_sidebar" id="left_sidebar">
             <div class="logo_content">
                 <div class="logo">
                     
                     <div class="logo_name"><span>P</span>syness</div>
                     
                 </div>
-            <i class="fas fa-bars" id="btn"></i>    
             </div>
             
             <ul class="nav_list">
                 <li>
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" id="fa-search"></i>
                     <input type="text" placeholder="Buscar">
                 </li>
                 
                 <li>
-                    <a href="#">
+                    <a href="feed2.jsp">
                         <i class="fa-sharp fa-solid fa-house"></i>
                         <span class="links_name">Inicio</span>
                     </a>
@@ -56,7 +83,7 @@
                 </li> 
                 
                 <li>
-                    <a href="#">
+                    <a href="genero.jsp">
                         <i class="fa-solid fa-venus-mars"></i>
                         <span class="links_name">Red de género</span>
                     </a>
@@ -64,7 +91,7 @@
                 </li> 
                 
                 <li>
-                    <a href="#">
+                    <a href="datacenter.jsp">
                         <i class="fa-regular fa-file-lines"></i>
                         <span class="links_name">Datacenter</span>
                     </a>
@@ -81,7 +108,7 @@
             </ul>
             
             <div class="logout_sesion">
-                <a href="login.jsp">
+                <a href="index.jsp?cerrar=true">
                     <span class="texto">Cerrar Sesion</span>
                     <i class="fas fa-sign-out" id="log_out"></i>
                 </a>
@@ -91,18 +118,64 @@
                         <!--BURGUER-->
         
         <script>
+            
             let btn = document.querySelector("#btn");
+            let burguer_div = document.querySelector(".burguer");
             let left_sidebar = document.querySelector(".left_sidebar");
             let searchBtn = document.querySelector(".fa-search");
+            let main = document.querySelector(".main_content");
             
-            btn.onclick = function() {
-                left_sidebar.classList.toggle("active");
-            }
+            document.getElementById("btn").addEventListener("click", open_close_menu);
+            document.getElementById("searchBtn").addEventListener("click");
+            
+            function open_close_menu(){
+                    burguer_div.classList.toggle("burguer_move");
+                    left_sidebar.classList.toggle("active");
+                }
+                
+                if (window.innerWidth < 800){
+                    
+                    burguer_div.classList.add("burguer_move");
+                    left_sidebar.classList.add("active");
+                }
+            
+            window.addEventListener("resize", function(){
+                
+                if(window.innerWidth > 800){
+                    
+                    burguer_div.classList.remove("burguer_move");
+                    left_sidebar.classList.remove("active"); 
+                }
+                
+                if(window.innerWidth < 800){
+                    
+                    burguer_div.classList.add("burguer_move");
+                    left_sidebar.classList.add("active"); 
+                }
+            });
+            
+            /*
             searchBtn.onclick = function() {
                 left_sidebar.classList.toggle("active");
             }
+             */
             
-        </script>
+            /*
+             * 
+             * @type {type}
+            document.getElementById("btn").addEventListener("click", open_close_menu);
+            
+            var left_sidebar = document.getElementById("left_sidebar");
+            var btn = document.getElementById("btn");
+            var burguer = document.getElementById("burguer");
+            
+                function open_close_menu(){
+                    burguer.classList.toggle("burguer_move");
+                    left_sidebar.classList.toggle("menu_side_move");
+                }
+             */
+        </script>     
+            
         
         <!-----------------------------------main-content(EXEL)--------------------------------------------------->
         <div class="main-content">
@@ -110,7 +183,7 @@
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png">
                     <div>
-                        <p>Usuario</p>
+                        <p><%=sesion.getAttribute("INombreuser")%></p>
                         <small>Public</small>
                     </div>
 
@@ -135,18 +208,18 @@
                             <div class="user-profile-modal">
                                 <img src="images/perfilsidebar.png">
                                 <div>
-                                    <p>Usuario</p>
+                                    <p><%=sesion.getAttribute("INombreuser")%></p>
                                 </div>
                                     
                             </div>
                             <div class="post-input-container">
-                                <textarea rows="3" placeholder="Que estas Pensando,  Axel?"></textarea>
+                                <textarea rows="3" placeholder="Que estas Pensando,  <%=sesion.getAttribute("INombreuser")%>?"></textarea>
                             </div>
                             <button type="button" class="btn btn-outline-light"><span><i class="fa-regular fa-file-plus" style="color: #000000;"></i>
                                 </span>Agregar Imagen</button>
                             <div class="modal-footer">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="button">Publicar</button>
+                                    <button class="btn btn-primary" type="submit">Publicar</button>
                                 </div>                            
                             </div>
                           </div>
@@ -249,11 +322,11 @@
         <!-----------------------------------right-sidebar(VERGAS)------------------------------------------------------------------------->
         <div class="right-sidebar">
             <div class="sidebar-profile">
-                <a href="profile.jsp" class="a-perfil" style="text-decoration:none">                    
+                <a href="profile.jsp?id=<%=sesion.getAttribute("Idprima")%>" class="a-perfil" style="text-decoration:none">                    
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
-                        <p id="username">1234567891234</p>
+                        <p id="username"><%=sesion.getAttribute("INombreuser")%></p>
                         <small>arroba</small>
                     </div>   
                 </div>
