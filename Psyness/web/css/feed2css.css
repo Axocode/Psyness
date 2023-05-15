@@ -200,6 +200,17 @@ Publicar
 
 /*Side bar Derecha*/
 
+.right-sidebar{  
+        width: 25%;
+        flex-basis: 25%;
+        position: sticky;
+        top: 10px;
+        align-self: flex-start;  
+       /* margin-left: 10%;*/
+
+    }
+    
+@media screen and (max-width: 1198px) {
 
     .right-sidebar{  
         width: 25%;
@@ -208,8 +219,9 @@ Publicar
         top: 10px;
         align-self: flex-start;  
         /*margin-left: 10%;*/
+        display: none;
     }
-
+}
 
 
 
@@ -221,6 +233,10 @@ Publicar
         padding: 20px;
         color: #626262;
         box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+    }
+    
+    .a-perfil{
+        
     }
  
 
@@ -259,7 +275,7 @@ Publicar
 
 .feisbuk{
     margin-top: 20px;
-    width: 76%;
+    width: 130%;
     height: 70%;
     background: #fff;
     border-radius: 6px;
