@@ -3,7 +3,12 @@
     Created on : 7 may. 2023, 20:33:13
     Author     : Admin
 --%>
-
+<%@page import="interPub.Ireqs"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="interDatos.Idatos"%>
+<%@page import="interPub.Ireqs"%>
+<%@page session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -27,6 +32,24 @@
     
 </head>
 <body>
+        <%
+                    HttpSession sesion = request.getSession();
+                    String Iidex;
+                    if (sesion.getAttribute("Idprima") != null)  {
+                    Iidex = sesion.getAttribute("Idprima").toString();
+                        }else{
+                        out.print("<script>location.replace('index.jsp');</script>");
+            }                        
+            %>
+            <%
+            int i = 0;
+            List<Ireqs> listita = null;
+            String Iid = null;
+            session = request.getSession( true );
+            
+            
+            Iid = request.getParameter( "id" );
+        %>
     <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
     <div class="container">
@@ -48,7 +71,7 @@
                 </li>
                 
                 <li>
-                    <a href="#">
+                    <a href="feed2.jsp">
                         <i class="fa-sharp fa-solid fa-house"></i>
                         <span class="links_name">Inicio</span>
                     </a>
@@ -56,7 +79,7 @@
                 </li> 
                 
                 <li>
-                    <a href="#">
+                    <a href="genero.jsp">
                         <i class="fa-solid fa-venus-mars"></i>
                         <span class="links_name">Red de género</span>
                     </a>
@@ -64,7 +87,7 @@
                 </li> 
                 
                 <li>
-                    <a href="#">
+                    <a href="datacenter.jsp">
                         <i class="fa-regular fa-file-lines"></i>
                         <span class="links_name">Datacenter</span>
                     </a>
@@ -81,7 +104,7 @@
             </ul>
             
             <div class="logout_sesion">
-                <a href="login.jsp">
+                <a href="index.jsp?cerrar=true">
                     <span class="texto">Cerrar Sesion</span>
                     <i class="fas fa-sign-out" id="log_out"></i>
                 </a>
@@ -110,7 +133,7 @@
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png">
                     <div>
-                        <p>Usuario</p>
+                        <p><%=sesion.getAttribute("INombreuser")%></p>
                         <small>Public</small>
                     </div>
 
@@ -135,18 +158,18 @@
                             <div class="user-profile-modal">
                                 <img src="images/perfilsidebar.png">
                                 <div>
-                                    <p>Usuario</p>
+                                    <p><%=sesion.getAttribute("INombreuser")%></p>
                                 </div>
                                     
                             </div>
                             <div class="post-input-container">
-                                <textarea rows="3" placeholder="Que estas Pensando,  Axel?"></textarea>
+                                <textarea rows="3" placeholder="Que estas Pensando,  <%=sesion.getAttribute("INombreuser")%>?"></textarea>
                             </div>
                             <button type="button" class="btn btn-outline-light"><span><i class="fa-regular fa-file-plus" style="color: #000000;"></i>
                                 </span>Agregar Imagen</button>
                             <div class="modal-footer">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="button">Publicar</button>
+                                    <button class="btn btn-primary" type="submit">Publicar</button>
                                 </div>                            
                             </div>
                           </div>
@@ -249,11 +272,11 @@
         <!-----------------------------------right-sidebar(VERGAS)------------------------------------------------------------------------->
         <div class="right-sidebar">
             <div class="sidebar-profile">
-                <a href="profile.jsp" class="a-perfil" style="text-decoration:none">                    
+                <a href="profile.jsp?id=<%=sesion.getAttribute("Idprima")%>" class="a-perfil" style="text-decoration:none">                    
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
-                        <p id="username">1234567891234</p>
+                        <p id="username"><%=sesion.getAttribute("INombreuser")%></p>
                         <small>arroba</small>
                     </div>   
                 </div>
