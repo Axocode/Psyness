@@ -288,7 +288,6 @@
                 </div>
             </div>
 <%
-              Collections.reverse(listita);
               if( listita != null && !listita.isEmpty() )
               {
                 for( Ireqs Redata : listita)
