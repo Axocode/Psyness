@@ -3,6 +3,7 @@
     Created on : 7 may. 2023, 20:33:13
     Author     : Admin
 --%>
+<%@page import="java.util.Collections"%>
 <%@page import="interPub.Ireqs"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
@@ -49,6 +50,57 @@
             
             
             Iid = request.getParameter( "id" );
+            
+            String Person = (String)sesion.getAttribute("INombreuser");
+            String PubNum = null;
+            String PubNom = null;
+            String PubCont = null;
+            String PubNumMegust = null;
+            String PubNumFavs = null;
+            String guardar = null;
+            String accion = "guardar";
+            Ireqs Redatos = null;
+            Integer idx = null;
+            session = request.getSession( true );
+            if( session != null )
+            {
+                if( session.getAttribute("listita") == null )
+                {
+                    session.setAttribute("listita", new ArrayList<Ireqs>());
+                }
+                listita = (List)session.getAttribute("listita");
+            }
+            PubCont = request.getParameter( "PubCont" );
+            guardar = request.getParameter( "guardar" );
+
+            
+            if( "Submit".equals( guardar ) )
+            {
+                if( "Submit".equals( guardar ) )
+                {
+                    Redatos = new Ireqs();
+                }
+                else
+                {
+                    Redatos = listita.get( Integer.parseInt( PubNom ) );
+                }
+                    Redatos.setPubCont(PubCont);
+                    Redatos.setPubNom(Person);
+                
+                
+                
+                if( "Submit".equals( guardar ) )
+                {
+                    listita.add( Redatos );
+                }
+            }    
+                if( Redatos == null )
+            {
+                Redatos = new Ireqs();
+                Redatos.setPubNom("");               
+                Redatos.setPubCont("");
+                
+            }
         %>
     <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
@@ -116,7 +168,6 @@
         </div>
                
                         <!--BURGUER-->
-        
         <script>
             
             let btn = document.querySelector("#btn");
@@ -212,15 +263,18 @@
                                 </div>
                                     
                             </div>
+                                <form id="formulario3" method="POST">
                             <div class="post-input-container">
-                                <textarea rows="3" placeholder="Que estas Pensando,  <%=sesion.getAttribute("INombreuser")%>?"></textarea>
+                                <textarea id="PubCont" name="PubCont" value="<%=Redatos.getPubCont()%>" class="input" rows="3" placeholder="Que estas Pensando,  <%=sesion.getAttribute("INombreuser")%>?"></textarea>
                             </div>
                             <button type="button" class="btn btn-outline-light"><span><i class="fa-regular fa-file-plus" style="color: #000000;"></i>
                                 </span>Agregar Imagen</button>
                             <div class="modal-footer">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit">Publicar</button>
+                                    <input class="btn btn-primary" type="submit" id="guardar" name="<%=accion%>"  class="submit"/>
+                                    
                                 </div>                            
+                                </form>
                             </div>
                           </div>
                         </div>
@@ -232,92 +286,40 @@
                     </div>
                 </div>
             </div>
-
+<%
+              if( listita != null && !listita.isEmpty() )
+              {
+                for( Ireqs Redata : listita)
+                {
+            %>   
             <div class="post-container">
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png">
                     <div>
-                        <p>Usuario</p>
+                        <p><%=Redata.getPubNom()%></p>
                         <small>Public</small>
                     </div>
                 </div>
                 <br>
-                <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui laboriosam voluptatum harum atque optio ipsa eum molestias tempore ex explicabo et cum, facilis facere deleniti, magni dicta enim aliquam?
-
-                </p>
-                <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui laboriosam voluptatum harum atque optio ipsa eum molestias tempore ex explicabo et cum, facilis facere deleniti, magni dicta enim aliquam?
-
+                <p class="post-text">
+                    <%=Redata.getPubCont()%>
                 </p>
                 <div class="post-row">
                     <div class="activity-icons">
-                        <div><a href="#"><img src="images/heart.png">500k</a></div>
-                        <div><a href="#"><img src="images/star.png">120</a></div>
+                        <div><a href="#"><img src="images/heart.png"><%=Redata.getPubNumMegust()%></a></div>
+                        <div><a href="#"><img src="images/star.png"><%=Redata.getPubNumFavs()%></a></div>
                         <div><a href="#"><img src="images/follow.png">Seguir</a></div>
                     </div>
                     <div class="post-profile-icon">
 
                     </div>
                 </div>
+                
             </div>
-
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="images/perfilsidebar.png">
-                    <div>
-                        <p>Usuario</p>
-                        <small>Public</small>
-                    </div>
-
-                </div>
-                <br>
-                <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui laboriosam voluptatum harum atque optio ipsa eum molestias tempore ex explicabo et cum, facilis facere deleniti, magni dicta enim aliquam?
-
-                </p>
-                <img src="images/frasemot.png" class="post-img">
-                <br><br>
-                <div class="post-row">
-                    <div class="activity-icons">
-                        <div><a href="#"><img src="images/heart.png">500k</a></div>
-                        <div><a href="#"><img src="images/star.png">120</a></div>
-                        <div><a href="#"><img src="images/follow.png">Seguir</a></div>
-                    </div>
-                    <div class="post-profile-icon">
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="images/perfilsidebar.png">
-                    <div>
-                        <p>Usuario</p>
-                        <small>Public</small>
-                    </div>
-
-                </div>
-                <br>
-                <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui laboriosam voluptatum harum atque optio ipsa eum molestias tempore ex explicabo et cum, facilis facere deleniti, magni dicta enim aliquam?
-
-                </p>
-                <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui laboriosam voluptatum harum atque optio ipsa eum molestias tempore ex explicabo et cum, facilis facere deleniti, magni dicta enim aliquam?
-
-                </p>
-                <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae qui laboriosam voluptatum harum atque optio ipsa eum molestias tempore ex explicabo et cum, facilis facere deleniti, magni dicta enim aliquam?
-
-                </p>
-                <div class="post-row">
-                    <div class="activity-icons">
-                        <div><a href="#"><img src="images/heart.png">500k</a></div>
-                        <div><a href="#"><img src="images/star.png">120</a></div>
-                        <div><a href="#"><img src="images/follow.png">Seguir</a></div>
-                    </div>
-                    <div class="post-profile-icon">
-
-                    </div>
-                </div>
-            </div>
-
+                        <%
+                                    }
+}
+                %>
         </div>
         <!-----------------------------------right-sidebar(VERGAS)------------------------------------------------------------------------->
         <div class="right-sidebar">
@@ -327,7 +329,7 @@
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
                         <p id="username"><%=sesion.getAttribute("INombreuser")%></p>
-                        <small>arroba</small>
+                        <small><%=sesion.getAttribute("Idprima")%></small>
                     </div>   
                 </div>
                 <br>

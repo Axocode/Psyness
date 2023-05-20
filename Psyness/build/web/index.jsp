@@ -151,12 +151,15 @@
         </div>
     </div>
         <% } %>
-        <script>
+         <script>
             function validar(correo){
                  var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
                  var esValido= expReg.test(correo);
                  if(esValido !== false) {
-                    alert("Correo valido");
+
+                    }else{
+                    alert("Correo invalido"); location.reload(true);
+                    }
             }
         </script>
     </body>
