@@ -1,9 +1,3 @@
-<%-- 
-    Document   : profile2
-    Created on : 19 may 2023, 19:17:04
-    Author     : BD1
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
             <!-----Bootstrap------->
-        <link rel="stylesheet" href="css/profileremaster.css">
+        <link rel="stylesheet" href="css/pfp.css">
         <script src="https://kit.fontawesome.com/54fa9899e2.js" crossorigin="anonymous"></script>
             <!-----Boxicons------->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -130,125 +124,94 @@
 
             </script> 
             <!-- main content -->
-            <div class="contenedor-central">
-            <div class="top-profile">
-                <div class="write-post-container">
-                <div class="user-profile-top">
-                    <div class="contenedor-imagen">
-                        <img src="images/perfilsidebar.png" class="">
-                        <div class="overlay">
-                            <div class="editar">
-                                <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"></path></svg></a>
-                            </div>
+          
+            <div class="contenedor-grid">
+                <div class="titulo">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>Selecciona la foto de perfil que mas te agrade</h1>
                         </div>
                     </div>
-                    <div>
-                        <h1>Nombre de usuario<br><span class="badge bg-secondary">Edad</span></h1>                       
-                    </div>
-
                 </div>
-               
-                <div class="post-row">
-                    <div class="activity-icons">
-                        <div><a href="#"><img src="images/heart.png">43</a></div>
-                        <div><a href="#"><img src="images/star.png">43</a></div>
-                        <div><a href="#"><img src="images/follow.png">Seguir</a></div>
+                
+                    <div class="pfp-container1">
+                       <img src="images/prof1.png" class="fotoperfil"/>
+                        <div class="overlay2">
+                            <div class="seleccionar">   
+                                <a href="#" ><span class="badge bg-light text-dark">Seleccionar</span></a>
+                            </div>
+                        </div>                        
                     </div>
-                    <div class="post-profile-icon">
+                
+                    <div class="pfp-container2">
+                       <img src="images/prof2.png" class="fotoperfil"/>
+                        <div class="overlay2">
+                            <div class="seleccionar">   
+                                <a href="#" ><span class="badge bg-light text-dark">Seleccionar</span></a>
+                            </div>
+                        </div>                        
+                    </div>
+                
+                    <div class="pfp-container3">
+                       <img src="images/prof3.png" class="fotoperfil"/>
+                        <div class="overlay2">
+                            <div class="seleccionar">   
+                                <a href="#" ><span class="badge bg-light text-dark">Seleccionar</span></a>
+                            </div>
+                        </div>                        
+                    </div>
+                
+                    <div class="pfp-container4">
+                       <img src="images/prof4.png" class="fotoperfil"/>
+                        <div class="overlay2">
+                            <div class="seleccionar">   
+                                <a href="#" ><span class="badge bg-light text-dark">Seleccionar</span></a>
+                            </div>
+                        </div>                        
+                    </div>
+                
+                    <div class="pfp-container5">
+                       <img src="images/prof5.png" class="fotoperfil"/>
+                        <div class="overlay2">
+                            <div class="seleccionar">   
+                                <a href="#" ><span class="badge bg-light text-dark">Seleccionar</span></a>
+                            </div>
+                        </div>                        
+                    </div>
+                
+                    <div class="pfp-container6">
+                       <img src="images/prof6.png" class="fotoperfil"/>
+                        <div class="overlay2">
+                            <div class="seleccionar">   
+                                <a href="#" ><span class="badge bg-light text-dark">Seleccionar</span></a>
+                            </div>
+                        </div>                        
+                    </div>
+                
+                    <div class="pfp-container7">
+                       <img src="images/prof7.png" class="fotoperfil"/>
+                        <div class="overlay2">
+                            <div class="seleccionar">   
+                                <a href="#" ><span class="badge bg-light text-dark">Seleccionar</span></a>
+                            </div>
+                        </div>                        
+                    </div>
+                
+                    <div class="pfp-container8">
+                       <img src="images/prof8.png" class="fotoperfil"/>
+                        <div class="overlay2">
+                            <div class="seleccionar">   
+                                <a href="#" ><span class="badge bg-light text-dark">Seleccionar</span></a>
+                            </div>
+                        </div>                        
+                    </div>
+                   
 
-                    </div>
-                </div>
-                <!--<div class="post-input-container">
-                    <div class="checkbox">
-                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          ¿Que desea publicar?
-                        </button>
-                    </div>
-
-                        <!--MODAL
-                              
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"><center>Crear publicacion</center></h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="user-profile-modal">
-                                <img src="images/perfilsidebar.png">
-                                <div>
-                                    <p>JASNA</p>
-                                </div>
-                                    
-                            </div>
-                                <form id="formulario3" method="POST">
-                            <div class="post-input-container">
-                                <textarea id="PubCont" name="PubCont" value="67" class="input" rows="3" placeholder="Que estas Pensando,  JAFNA?"></textarea>
-                            </div>
-                            <button type="button" class="btn btn-outline-light"><span><i class="fa-regular fa-file-plus" style="color: #000000;"></i>
-                                </span>Agregar Imagen</button>
-                            <div class="modal-footer">
-                                <div class="d-grid gap-2">
-                                    <input class="btn btn-primary" type="submit" id="guardar"  class="submit"/>
-                                    
-                                </div>                            
-                                </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                        <!--FIN MODAL-  
-                    <div class="add-post-links">
-                        <a href="#"><img src="images/camera.png">Agregar Img</a>
-                        <a href="#"><img src="images/upload.png">Subir Imagen</a> -->
-                    </div>
             </div>
-            <div class="main-content">
-                    <div class="post-container">
-                        <div class="user-profile">
-                            <img src="images/perfilsidebar.png">
-                            <div>
-                                <p>1422</p>
-                                <small>Public</small>
-                            </div>
-                        </div>
-                        <br>
-                        <p class="post-text">
-                            3424
-                        </p>
-                        <div class="post-row">
-                            <div class="activity-icons">
-                                <div><a href="#"><img src="images/heart.png">43</a></div>
-                                <div><a href="#"><img src="images/star.png">43</a></div>
-                                <div><a href="#"><img src="images/follow.png">Seguir</a></div>
-                            </div>
-                            <div class="post-profile-icon">
+            <!-- Right Sidebar -->
 
-                            </div>
-                    </div>
-                </div>
-                </div>
-            </div>
             <div class="right-sidebar" >
-            <div class="sidebar-profile">
-                <a href="profile.jsp" class="a-perfil" style="text-decoration:none">                    
-                <div class="user-profile">
-                    <img src="images/perfilsidebar.png" id="foton">
-                    <div>
-                        <p id="username">1234</p>
-                        <small>JAFNA</small>
-                    </div>   
-                </div>
-                <br>
-                <div class="stats">
-                    <div class="activity-icons">
-                        <div><img src="images/heart.png">500k</a></div>
-                        <div><img src="images/star.png">120</a></div>
-                        <div><img src="images/friends.png">500</div>
-                    </div>
-                </div>
-                </a>
-            </div>
+            
             
             <div class="suggested">
                 <div class="accordion" id="accordionExample">                    
