@@ -24,7 +24,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <!-----Bootstrap------->
-    <link rel="stylesheet" href="css/feed2css.css">
+    <link rel="stylesheet" href="css/feed3css.css">
     <script src="https://kit.fontawesome.com/54fa9899e2.js" crossorigin="anonymous"></script>
         <!-----Boxicons------->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -33,75 +33,7 @@
     
 </head>
 <body>
-        <%
-                    HttpSession sesion = request.getSession();
-                    String Iidex;
-                    if (sesion.getAttribute("Idprima") != null)  {
-                    Iidex = sesion.getAttribute("Idprima").toString();
-                        }else{
-                        out.print("<script>location.replace('index.jsp');</script>");
-            }                        
-            %>
-            <%
-            int i = 0;
-            List<Ireqs> listita = null;
-            String Iid = null;
-            session = request.getSession( true );
-            
-            
-            Iid = request.getParameter( "id" );
-            
-            String Person = (String)sesion.getAttribute("INombreuser");
-            String PubNum = null;
-            String PubNom = null;
-            String PubCont = null;
-            String PubNumMegust = null;
-            String PubNumFavs = null;
-            String guardar = null;
-            String accion = "guardar";
-            Ireqs Redatos = null;
-            Integer idx = null;
-            session = request.getSession( true );
-            if( session != null )
-            {
-                if( session.getAttribute("listita") == null )
-                {
-                    session.setAttribute("listita", new ArrayList<Ireqs>());
-                }
-                listita = (List)session.getAttribute("listita");
-            }
-            PubCont = request.getParameter( "PubCont" );
-            guardar = request.getParameter( "guardar" );
-
-            
-            if( "Submit".equals( guardar ) )
-            {
-                if( "Submit".equals( guardar ) )
-                {
-                    Redatos = new Ireqs();
-                }
-                else
-                {
-                    Redatos = listita.get( Integer.parseInt( PubNom ) );
-                }
-                    Redatos.setPubCont(PubCont);
-                    Redatos.setPubNom(Person);
-                
-                
-                
-                if( "Submit".equals( guardar ) )
-                {
-                    listita.add( Redatos );
-                }
-            }    
-                if( Redatos == null )
-            {
-                Redatos = new Ireqs();
-                Redatos.setPubNom("");               
-                Redatos.setPubCont("");
-                
-            }
-        %>
+        
     <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
         <!-----------------------------------left-sidebar(YORCH)-------------------------------------------------->
@@ -113,10 +45,13 @@
         
         <div class="left_sidebar" id="left_sidebar">
             <div class="logo_content">
-                <div class="logo">
-                    
-                    <div class="logo_name"><span>P</span>syness</div>
-                    
+                <div class="img">
+                        <!-------Image-------->
+                        <img src="images/logosidebar.jpg" width="220"">
+                </div>
+                <div class="img_responsive">
+                        <!-------Image-------->
+                        <img src="images/favicon.jpg" width="40" id="img_responsive">
                 </div>
             </div>
             
@@ -168,40 +103,41 @@
         </div>
                
                         <!--BURGUER-->
+        
         <script>
             
             let btn = document.querySelector("#btn");
             let burguer_div = document.querySelector(".burguer");
             let left_sidebar = document.querySelector(".left_sidebar");
             let searchBtn = document.querySelector(".fa-search");
-            let main = document.querySelector(".main_content");
             
             document.getElementById("btn").addEventListener("click", open_close_menu);
-            document.getElementById("searchBtn").addEventListener("click");
             
             function open_close_menu(){
                     burguer_div.classList.toggle("burguer_move");
                     left_sidebar.classList.toggle("active");
                 }
                 
-                if (window.innerWidth < 800){
-                    
-                    burguer_div.classList.add("burguer_move");
-                    left_sidebar.classList.add("active");
-                }
             
             window.addEventListener("resize", function(){
                 
-                if(window.innerWidth > 800){
-                    
-                    burguer_div.classList.remove("burguer_move");
-                    left_sidebar.classList.remove("active"); 
-                }
-                
-                if(window.innerWidth < 800){
+                if(window.innerWidth > 200){
                     
                     burguer_div.classList.add("burguer_move");
                     left_sidebar.classList.add("active"); 
+                }
+                
+                if(window.innerWidth < 200){
+                    
+                   document.getElementById("btn").addEventListener("click", open_close_menu_responsive);
+            
+                    function open_close_menu_responsive(){
+                        burguer_div.classList.toggle("burguer");
+                        left_sidebar.classList.toggle("responsive");
+                } 
+                    
+                    burguer_div.classList.remove("burguer_move");
+                    left_sidebar.classList.remove("active"); 
                 }
             });
             
@@ -234,7 +170,7 @@
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png">
                     <div>
-                        <p><%=sesion.getAttribute("INombreuser")%></p>
+                        <p>JASNA</p>
                         <small>Public</small>
                     </div>
 
@@ -259,19 +195,19 @@
                             <div class="user-profile-modal">
                                 <img src="images/perfilsidebar.png">
                                 <div>
-                                    <p><%=sesion.getAttribute("INombreuser")%></p>
+                                    <p>JASNA</p>
                                 </div>
                                     
                             </div>
                                 <form id="formulario3" method="POST">
                             <div class="post-input-container">
-                                <textarea id="PubCont" name="PubCont" value="<%=Redatos.getPubCont()%>" class="input" rows="3" placeholder="Que estas Pensando,  <%=sesion.getAttribute("INombreuser")%>?"></textarea>
+                                <textarea id="PubCont" name="PubCont" value="67" class="input" rows="3" placeholder="Que estas Pensando,  JAFNA?"></textarea>
                             </div>
                             <button type="button" class="btn btn-outline-light"><span><i class="fa-regular fa-file-plus" style="color: #000000;"></i>
                                 </span>Agregar Imagen</button>
                             <div class="modal-footer">
                                 <div class="d-grid gap-2">
-                                    <input class="btn btn-primary" type="submit" id="guardar" name="<%=accion%>"  class="submit"/>
+                                    <input class="btn btn-primary" type="submit" id="guardar"  class="submit"/>
                                     
                                 </div>                            
                                 </form>
@@ -286,50 +222,41 @@
                     </div>
                 </div>
             </div>
-<%
-              if( listita != null && !listita.isEmpty() )
-              {
-                for( Ireqs Redata : listita)
-                {
-            %>   
+ 
             <div class="post-container">
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png">
                     <div>
-                        <p><%=Redata.getPubNom()%></p>
+                        <p>1422</p>
                         <small>Public</small>
                     </div>
                 </div>
                 <br>
                 <p class="post-text">
-                    <%=Redata.getPubCont()%>
+                    3424
                 </p>
                 <div class="post-row">
                     <div class="activity-icons">
-                        <div><a href="#"><img src="images/heart.png"><%=Redata.getPubNumMegust()%></a></div>
-                        <div><a href="#"><img src="images/star.png"><%=Redata.getPubNumFavs()%></a></div>
+                        <div><a href="#"><img src="images/heart.png">43</a></div>
+                        <div><a href="#"><img src="images/star.png">43</a></div>
                         <div><a href="#"><img src="images/follow.png">Seguir</a></div>
                     </div>
                     <div class="post-profile-icon">
 
                     </div>
                 </div>
-                
             </div>
-                        <%
-                                    }
-}
-                %>
+
         </div>
         <!-----------------------------------right-sidebar(VERGAS)------------------------------------------------------------------------->
         <div class="right-sidebar">
             <div class="sidebar-profile">
-                <a href="profile.jsp?id=<%=sesion.getAttribute("Idprima")%>" class="a-perfil" style="text-decoration:none">                    
+                <a href="profile.jsp" class="a-perfil" style="text-decoration:none">                    
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
-                        <p id="username"><%=sesion.getAttribute("INombreuser")%></p>
-                        <small><%=sesion.getAttribute("Idprima")%></small>
+                        <p id="username">1234</p>
+                        <small>JAFNA</small>
                     </div>   
                 </div>
                 <br>

@@ -223,6 +223,7 @@ Publicar
         /*margin-left: 10%;*/
         display: none;
     }
+    
 }
 
     .sidebar-profile{    
@@ -327,39 +328,53 @@ Publicar
     width: 78px;
 }
 
-.left_sidebar .logo_content .logo{
-    color: #fff;
+.left_sidebar .logo_content .img{
     display: flex;
+    margin-top: 30px;
     height: 50px;
     width: 100%;
+    transform: scale(60%);
+    align-items: center;
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.left_sidebar .logo_content .img_responsive{
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+#img_responsive{
+    z-index: 300;
+    border-radius: 50%;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 0;
+}
+
+/*
+*/
+.left_sidebar.active .logo_content .img_responsive{
+    display: flex;
+    transform: translateY(-60px);
     align-items: center;
     opacity: 1;
     pointer-events: none;
 }
 
-
 /*
 */
-.left_sidebar.active .logo_content .logo{
+.left_sidebar.active .logo_content .img{
     opacity: 0;
     pointer-events: none;
 }
 
-.logo_content .logo i{
+.logo_content .img i{
     font-size: 28px;
     margin-right: 5px;
-}
-
-.logo_content .logo .logo_name{
-    font-family: "Poppins" , sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 5px;
-}
-
-.logo_content .logo .logo_name span{
-    font-size: 40px;
-    font-weight: 600;
 }
 
 /*Burguer*/
@@ -388,20 +403,7 @@ Publicar
     cursor: pointer;
     position: absolute;
 }
-
-/*Burguer
-.left_sidebar #btn{
-    position: absolute;
-    color: #fff;
-    left: 90%;
-    top: 10px;
-    font-size: 20px;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    line-height: 50px;
-    transform: translateX(-60%);
-}
+/*
 */
 .left_sidebar.active #btn{
     left: 50%;
@@ -414,7 +416,7 @@ Publicar
 
 .left_sidebar ul li{
     position: relative;
-    height: 90px;
+    height: 80px;
     width: 100%;
     margin: 0 -7px;
     list-style: none;
@@ -426,6 +428,8 @@ Publicar
 .left_sidebar.active ul li {
     left: -150%;
     width: 270%;
+    height: 80px;
+    transform: translateY(-60px);
 }
 
 .left_sidebar ul li input{
@@ -559,17 +563,30 @@ Publicar
     margin-left: 78px;
     background: #F5F5F5;
 }
+/*
+.burguer_move_responsive{
+    margin-left: 0px;
+    background: #F5F5F5;
+}
+*/
 
+.left_sidebar.responsive{
+    width: 78px;
+    left: -78px;
+    opacity: 0;
+}
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 550px) {
       
     .main-content{
         left: 0;
-        margin-left: 10%;
+        align-items: center;
+        margin-left: 05%;
+        transform: scale(80%);
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 200px) {
     .burguer{
         width: 100%;
         left: 0;
@@ -582,65 +599,87 @@ Publicar
         opacity: 0;
     }
     
-    .menu_side_move{
-/**/
-        .left_sidebar.active{
-            width: 78px;
-        }
-
-        .left_sidebar.active .logo_content .logo{
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .left_sidebar.active #btn{
-            left: 50%;
-        }
-
-        .left_sidebar.active ul li {
-            left: -150%;
-            width: 270%;
-        }
-
-        .left_sidebar.active ul li .fa-search:hover{
-            background: #fff;
-            color: #1d1b31;
-        }
-
-        .left_sidebar.active ul li a{
-            white-space: nowrap; 
-        }
-
-        .left_sidebar.active .links_name{
-            opacity: 0;
-            pointer-events: none;
-
-        }
-
-        .left_sidebar.active .logout_sesion span{
-           opacity: 0;
-           pointer-events: none; 
-        }
-
-        .left_sidebar.active .logout_sesion a{
-            position: absolute;
-            left: 30%;
-            width: 60%;
-            height: 45px;
-            border-radius: 12px;
-            color: #fff;
-            background: #1d1b31;
-            align-items: center;
-        }
-        .left_sidebar.active .logout_sesion #log_out{
-            transform: translate(10%, -130%);
-
-        }
-
-        .left_sidebar.active .logout_sesion a:hover{
-            background: #fff;
-            color: #1d1b31;
-        }
-/**/
+    .left_sidebar.responsive{
+    width: 78px;
+    opacity: 1;
 }
+    
 }
+
+
+/*Intento de Responsive SideRight
+@media screen and (max-width: 1198px) {
+    --
+    .right-sidebar{  
+        width: 25%;
+        --flex-basis: 25%;
+        position: sticky;
+        top: 10px;
+        align-self: flex-start;  
+        --margin-left: 10%;
+        display: none;
+    }
+    --
+    
+    .img_sideright{
+        height: 30%;
+        width: 30%;
+        opacity: 1;
+    }
+    
+    .user_sideright{
+        display: none;
+        opacity: 0;
+    }
+    
+    .stats{
+        display: none;
+        opacity: 0;
+    }
+    
+    .suggested{
+        width: 130%;
+        height: 70%;
+        background: #fff;
+        display: none;
+        opacity: 0;
+    }
+    
+    .trends{
+        width: 130%;
+        height: 70%;
+        background: #fff;
+        display: none;
+        opacity: 0;
+    }
+    
+    .cont-feis{
+        width: 130%;
+        display: none;
+        opacity: 0;
+    }
+}
+
+
+    .img_sideright{
+        margin-right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #username{
+        margin-left: 0px;
+        transform: translateX(-220%);
+    }
+    
+    .user_sideright small{
+        margin-left: 0px;
+        left: 0;
+        transform: translateX(-220%);
+    }
+    
+    .img_sideright.active{
+        position: inherit;
+    }
+    
+*/
