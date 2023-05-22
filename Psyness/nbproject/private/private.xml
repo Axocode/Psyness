@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Psyness/Psyness/web/genero2.jsp</file>
             <file>file:/D:/Psyness/Psyness/web/categoria3.jsp</file>
             <file>file:/D:/Psyness/Psyness/web/css/genero2.css</file>
@@ -12,6 +13,12 @@
             <file>file:/D:/Psyness/Psyness/web/categoria2.jsp</file>
             <file>file:/D:/Psyness/Psyness/web/css/feed3css.css</file>
             <file>file:/D:/Psyness/Psyness/web/categoria4.jsp</file>
+=======
+            <file>file:/C:/Users/BD1/Documents/4to/Psyness/Psyness/web/profileimg.jsp</file>
+            <file>file:/C:/Users/BD1/Documents/4to/Psyness/Psyness/web/profile2.jsp</file>
+            <file>file:/C:/Users/BD1/Documents/4to/Psyness/Psyness/web/css/pfp.css</file>
+            <file>file:/C:/Users/BD1/Documents/4to/Psyness/Psyness/web/css/profileremaster.css</file>
+>>>>>>> 62b55cb2d567ce65b06f588bf91c7e7e1c4ede7e
         </group>
     </open-files>
 </project-private>
