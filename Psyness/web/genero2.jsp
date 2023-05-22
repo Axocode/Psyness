@@ -224,39 +224,41 @@
                 padding-top: 3rem;">
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria1.jsp"><img src="images/bullying.png" class="card-img-top" alt="..."></a>
+                    <a href="categoria1.jsp"><img src="images/FobiasDiscriminatorias.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
-                    <h4 class="card-title">Bullying</h4>
-                    <p class="card-text">¿Qué es el Bullying?<br>Serie de amenazas hostiles, físicas o verbales que se repiten, angustiando a la víctima y estableciendo un desequilibrio de poder entre ella y su acosador.
-</p>
+                    <h4 class="card-title">Violencia</h4>
+                    <p class="card-text">La violencia es el “uso intencional de la fuerza física o el poder real o como amenaza contra uno mismo, una persona, o comunidad que tiene como resultado la probabilidad de daño psicológico, fisico privación.</p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card" style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria2.jsp"><img src="images/acoso.png" class="card-img-top" alt="..."></a>
+                    <a href="categoria2.jsp"><img src="images/genero.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
-                    <h4 class="card-title">Acoso Escolar</h4>
-                    <p class="card-text">El acoso escolar puede causar daños físicos, sociales o emocionales en quienes lo sufren. Los estudiantes que son víctimas de acoso escolar no suelen defende
-                        rse, al principio creen que ignorando a sus agresores, el acoso se detendrá.  </p>
+                    <h4 class="card-title">Genero</h4>
+                    <p class="card-text">El género se refiere a los roles, las características y oportunidades definidos por la sociedad que se
+                        consideran apropiados para todas las personas
+ </p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria3.jsp"><img src="images/ciberbullying.png" class="card-img-top" alt="..."></a>
+                    <a href="categoria3.jsp"><img src="images/economiagenero.jpg" class="card-img-top" alt="..."></a>
                   <div class="card-body">
-                    <h4 class="card-title">CiberBullying</h4>
-                    <p class="card-text">El ciberbullying es una variante del acoso que se produce a traves de internet. El tiene sensacion de anonimato y las consecuencias son mas dificiles de evaluar</p>
+                    <h4 class="card-title">Economia en el genero</h4>
+                    <p class="card-text">La autonomía económica se explica como la capacidad de las mujeres de generar ingresos y
+                        recursos propios a partir del acceso al trabajo remunerado en igualdad de condiciones que los hombres</p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria4.jsp"><img src="images/FobiasDiscriminatorias.png" class="card-img-top" alt="..."></a>
+                    <a href="categoria4.jsp"><img src="images/Suicidio.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
-                    <h4 class="card-title">Fobias Discriminatorias</h4>
-                    <p class="card-text">Es un tipo de transtorno de ansiedad. Es un temor fuerte e irracional.<br>Estas fobias es un tipo de discriminacion hacia las personas con otras capacidades y preferencias</p>
+                    <h4 class="card-title">Suicidio</h4>
+                    <p class="card-text">Segun la OMS el comportamiento suicida es una de las variables, reportadas por la evidencia cientifica, 
+                        asociadas al consumo de alcohol, tabaco y el consumo de drogras.</p>
                   </div>
                 </div>
               </div>

@@ -224,42 +224,32 @@
                 padding-top: 3rem;">
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria1.jsp"><img src="images/bullying.png" class="card-img-top" alt="..."></a>
+                    <a href="categoria1.jsp"><img src="images/adicciones.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
-                    <h4 class="card-title">Bullying</h4>
-                    <p class="card-text">¿Qué es el Bullying?<br>Serie de amenazas hostiles, físicas o verbales que se repiten, angustiando a la víctima y estableciendo un desequilibrio de poder entre ella y su acosador.
-</p>
+                    <h4 class="card-title">Adicciones</h4>
+                    <p class="card-text">El consumo de drogas aumenta la posibilidad de ideacion suicida en un 30%<br><br>Asi mismo, llegan a tener un ataque de angustia, el cual puede determinar con un acto que atente contra su vida.</p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card" style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria2.jsp"><img src="images/acoso.png" class="card-img-top" alt="..."></a>
+                    <a href="categoria2.jsp"><img src="images/prevencion.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
-                    <h4 class="card-title">Acoso Escolar</h4>
-                    <p class="card-text">El acoso escolar puede causar daños físicos, sociales o emocionales en quienes lo sufren. Los estudiantes que son víctimas de acoso escolar no suelen defende
-                        rse, al principio creen que ignorando a sus agresores, el acoso se detendrá.  </p>
+                    <h4 class="card-title">Prevencion</h4>
+                    <p class="card-text">La deteccion de factores de riesgo, el apoyo y seguimiento de casos y el fomento de programas de salud son elementos clave para la prevencion del suicidio.</p>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria3.jsp"><img src="images/ciberbullying.png" class="card-img-top" alt="..."></a>
+                    <a href="categoria3.jsp"><img src="images/suicidiomexico.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
-                    <h4 class="card-title">CiberBullying</h4>
-                    <p class="card-text">El ciberbullying es una variante del acoso que se produce a traves de internet. El tiene sensacion de anonimato y las consecuencias son mas dificiles de evaluar</p>
+                    <h4 class="card-title">Suicidio en México</h4>
+                    <p class="card-text">En México el suicidio es la segunda causa de muerte en adultos jovenes, es decir, personas de 15-44 años.</p>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria4.jsp"><img src="images/FobiasDiscriminatorias.png" class="card-img-top" alt="..."></a>
-                  <div class="card-body">
-                    <h4 class="card-title">Fobias Discriminatorias</h4>
-                    <p class="card-text">Es un tipo de transtorno de ansiedad. Es un temor fuerte e irracional.<br>Estas fobias es un tipo de discriminacion hacia las personas con otras capacidades y preferencias</p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
             <!<!-- CARDS -->
 

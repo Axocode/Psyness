@@ -224,42 +224,14 @@
                 padding-top: 3rem;">
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria1.jsp"><img src="images/bullying.png" class="card-img-top" alt="..."></a>
+                    <a href="categoria1.jsp"><img src="images/mujerempresarial.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
-                    <h4 class="card-title">Bullying</h4>
-                    <p class="card-text">¿Qué es el Bullying?<br>Serie de amenazas hostiles, físicas o verbales que se repiten, angustiando a la víctima y estableciendo un desequilibrio de poder entre ella y su acosador.
-</p>
+                    <h4 class="card-title">Mujer Empresarial</h4>
+                    <p class="card-text">En torno a las mujeres empresarias, es una ocasion valiosa para impulsar emprendimiento de jovenes y mujeres de cualquier edad, grupo social, raza o nacionalidad <br> <br>Con acciones que despejen su camino de obstaculos que les discrimine</p>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="card" style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria2.jsp"><img src="images/acoso.png" class="card-img-top" alt="..."></a>
-                  <div class="card-body">
-                    <h4 class="card-title">Acoso Escolar</h4>
-                    <p class="card-text">El acoso escolar puede causar daños físicos, sociales o emocionales en quienes lo sufren. Los estudiantes que son víctimas de acoso escolar no suelen defende
-                        rse, al principio creen que ignorando a sus agresores, el acoso se detendrá.  </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria3.jsp"><img src="images/ciberbullying.png" class="card-img-top" alt="..."></a>
-                  <div class="card-body">
-                    <h4 class="card-title">CiberBullying</h4>
-                    <p class="card-text">El ciberbullying es una variante del acoso que se produce a traves de internet. El tiene sensacion de anonimato y las consecuencias son mas dificiles de evaluar</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria4.jsp"><img src="images/FobiasDiscriminatorias.png" class="card-img-top" alt="..."></a>
-                  <div class="card-body">
-                    <h4 class="card-title">Fobias Discriminatorias</h4>
-                    <p class="card-text">Es un tipo de transtorno de ansiedad. Es un temor fuerte e irracional.<br>Estas fobias es un tipo de discriminacion hacia las personas con otras capacidades y preferencias</p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
             <!<!-- CARDS -->
 
