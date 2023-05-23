@@ -6,10 +6,10 @@ public class InterUsers implements Serializable{
     
     private int IUserNum;
     private String IUser;
-    private int IAge;
+    private String IAge;
     private String IEmail;
     private String IPassword;
-    private int IImgNum;
+    private String IImgNum;
 
     public int getIUserNum() {
         return IUserNum;
@@ -25,14 +25,6 @@ public class InterUsers implements Serializable{
 
     public void setIUser(String IUser) {
         this.IUser = IUser;
-    }
-
-    public int getIAge() {
-        return IAge;
-    }
-
-    public void setIAge(int IAge) {
-        this.IAge = IAge;
     }
 
     public String getIEmail() {
@@ -51,14 +43,20 @@ public class InterUsers implements Serializable{
         this.IPassword = IPassword;
     }
 
-    public int getIImgNum() {
+    public String getIAge() {
+        return IAge;
+    }
+
+    public void setIAge(String IAge) {
+        this.IAge = IAge;
+    }
+
+    public String getIImgNum() {
         return IImgNum;
     }
 
-    public void setIImgNum(int IImgNum) {
+    public void setIImgNum(String IImgNum) {
         this.IImgNum = IImgNum;
     }
-    
-    
 
 }

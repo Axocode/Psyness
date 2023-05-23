@@ -50,10 +50,10 @@ public class InterUsersService extends Conexion<InterUsers>
                 users = new InterUsers();
                 users.setIUserNum(resultSet.getInt(1));
                 users.setIUser(resultSet.getString(2));
-                users.setIAge(resultSet.getInt(3));
+                users.setIAge(resultSet.getString(3));
                 users.setIEmail(resultSet.getString(4));
                 users.setIPassword(resultSet.getString(5));
-                users.setIImgNum(resultSet.getInt(6));
+                users.setIImgNum(resultSet.getString(6));
                 usersList.add(users);
             }
             resultSet.close();
@@ -87,10 +87,10 @@ public class InterUsersService extends Conexion<InterUsers>
             }
             preparedStatement.setInt(1, users.getIUserNum());
             preparedStatement.setString(2, users.getIUser());
-            preparedStatement.setInt(3, users.getIAge());
+            preparedStatement.setString(3, users.getIAge());
             preparedStatement.setString(4, users.getIEmail());
             preparedStatement.setString(5, users.getIPassword());
-            preparedStatement.setInt(6, users.getIImgNum());
+            preparedStatement.setString(6, users.getIImgNum());
             row = preparedStatement.executeUpdate();
             closeConnection(connection);
             return row == 1;
@@ -193,10 +193,10 @@ public class InterUsersService extends Conexion<InterUsers>
                 
                 aux.setIUserNum(resultSet.getInt(1));
                 aux.setIUser(resultSet.getString(2));
-                aux.setIAge(resultSet.getInt(3));
+                aux.setIAge(resultSet.getString(3));
                 aux.setIEmail(resultSet.getString(4));
                 aux.setIPassword(resultSet.getString(5));
-                aux.setIImgNum(resultSet.getInt(6));
+                aux.setIImgNum(resultSet.getString(6));
                 
             }
             resultSet.close();
