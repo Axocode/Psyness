@@ -23,6 +23,11 @@
         <link rel="icon" type="image/jpg" href="images/favicon.jpg"/>    
     </head>
     <body>
+<%
+    HttpSession sesion = request.getSession();
+    if (sesion.getAttribute("SIUser") != null){}
+    else{out.print("<script>location.replace('index.jsp');</script>");}                        
+%>  
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
         <div class="container" id="container">
@@ -49,7 +54,7 @@
                     </li>
 
                     <li>
-                        <a href="feed2.jsp">
+                        <a href="feed.jsp">
                             <i class="fa-sharp fa-solid fa-house"></i>
                             <span class="links_name">Inicio</span>
                         </a>

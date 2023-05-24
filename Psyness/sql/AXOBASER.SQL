@@ -19,13 +19,15 @@ IImgNum varchar( 1 )
 
 create table InterPub (
 PubNumId int AUTO_INCREMENT primary key not null,
-PubCont text( 500 ) 
+PubCont text( 500 ),
+PubMg int
 );
 
 -- relacion
 
-create table InterRelizanPubUsers (
-PubNumId int,
+
+create table InterUsersPub (
+PubNumId int AUTO_INCREMENT,
 IUserNum int,
 foreign key (PubNumId) references InterPub (PubNumId) on delete cascade on update cascade,
 foreign key (IUserNum) references InterUsers (IUserNum) on delete cascade on update cascade

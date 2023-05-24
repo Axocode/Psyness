@@ -87,26 +87,33 @@
                 {
                     flag = helpers.addT( );
                   
-                 
+                    InterUsersService inter = new InterUsersService();
+                    InterUsers userR = inter.getUserByInterUsers(request.getParameter("IUser"));
+                    Integer SIUserNum = userR.getIUserNum();
+            
+            
+            
+            
+
                     if(flag != false){
+
                     String SIUser = request.getParameter("IUser");
                     String SIAge = request.getParameter("IAge");
                     String SIEmail = request.getParameter("IEmail");
                     String SIPassword = request.getParameter("IPassword");
                     
-
-
-                    session.setAttribute("signUp", "crearCuenta"); 
-                    session.setAttribute("SIUser", SIUser);
-                    session.setAttribute("SIAge", SIAge);
-                    session.setAttribute("SIEmail", SIEmail);
-                    session.setAttribute("SIPassword", SIPassword);
-                    session.setAttribute("valido", "creacionValida");
+                    sesion.setAttribute("signUp", "crearCuenta"); 
+                    sesion.setAttribute("SIUserNum", SIUserNum);
+                    sesion.setAttribute("SIUser", SIUser);
+                    sesion.setAttribute("SIAge", SIAge);
+                    sesion.setAttribute("SIEmail", SIEmail);
+                    sesion.setAttribute("SIPassword", SIPassword);
+                    sesion.setAttribute("valido", "creacionValida");
                     response.sendRedirect("feed.jsp");
                     }else
                         {
                         
-                            session.setAttribute("invalido", "creacionInvalida");
+                            sesion.setAttribute("invalido", "creacionInvalida");
                             response.sendRedirect("Session.jsp?accion=Nuevo");
                         } 
                     

@@ -3,6 +3,15 @@
     Created on : 7 may. 2023, 20:33:13
     Author     : Admin
 --%>
+<%@page import="org.axocode.dao.InterUsers"%>
+<%@page import="org.axocode.helper.InterUsersHelper"%>
+<%@page import="org.axocode.dao.service.InterUsersPubService"%>
+<%@page import="org.axocode.helper.InterUsersPubHelper"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="org.axocode.dao.InterPub"%>
+<%@page import="org.axocode.dao.InterUsersPub"%>
+<%@page import="org.axocode.helper.Helpers"%>
+<%@page import="org.axocode.helper.InterPubHelper"%>
 <%@page import="java.util.Collections"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
@@ -29,9 +38,40 @@
 </head>
 <body>
 <%
-    HttpSession sesion = request.getSession();
+          HttpSession sesion = request.getSession();
           if (sesion.getAttribute("SIUser") != null){}
-          else{out.print("<script>location.replace('index.jsp');</script>");}                        
+          else{out.print("<script>location.replace('index.jsp');</script>");}
+                
+                Helpers helpers = null;
+                InterPub user = null;
+                String aux = null;
+                boolean flag = false;
+                String readonly = null;
+                aux = "Guardar";
+                readonly = "";
+                String guardar = request.getParameter("guardar");
+                
+                helpers = new InterPubHelper( ).addRequest( request );
+                
+                
+                user = new InterPub(); 
+                user.setPubCont("");    
+
+                if(  "Submit".equals( guardar ) )
+                {
+                    flag = helpers.addT( );
+                    int IUserNum = Integer.parseInt(request.getParameter("IUserNum"));
+
+                    InterUsersPub contextInterses = new InterUsersPub();
+                    contextInterses.setiUserNum(new InterUsers(IUserNum));
+
+                InterUsersPubService interUsersPubService = new InterUsersPubService();
+                boolean success = interUsersPubService.addUsersPub(contextInterses);
+
+                
+                    
+                    
+    }
 %>
     <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
@@ -198,16 +238,14 @@
                                 </div>
                                     
                             </div>
-                                <form id="formulario3" method="POST">
+                                <form id="formulario3" method="POST" >
                             <div class="post-input-container">
-                                <textarea id="PubCont" name="PubCont" value="67" class="input" rows="3" placeholder="Que estas Pensando,  JAFNA?"></textarea>
+                                <textarea id="PubCont" name="PubCont" value="67" class="input" rows="3" placeholder="Que estas Pensando,  <%=sesion.getAttribute("SIUser")%>?"></textarea>
+                                <input type="hidden" name="IUserNum" id="IUserNum" value="<%=sesion.getAttribute("SIUserNum")%>" />
                             </div>
-                            <button type="button" class="btn btn-outline-light"><span><i class="fa-regular fa-file-plus" style="color: #000000;"></i>
-                                </span>Agregar Imagen</button>
                             <div class="modal-footer">
                                 <div class="d-grid gap-2">
-                                    <input class="btn btn-primary" type="submit" id="guardar"  class="submit"/>
-                                    
+                                    <input class="btn btn-primary" type="submit" id="guardar" name="guardar" value="Submit" />
                                 </div>                            
                                 </form>
                             </div>
@@ -255,7 +293,7 @@
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
                         <p id="username"><%=sesion.getAttribute("SIUser")%></p>
-                        <small><%=sesion.getAttribute("SIAge")%></small>
+                        <small><%=sesion.getAttribute("SIUserNum")%></small>
                     </div>   
                 </div>
                 <br>

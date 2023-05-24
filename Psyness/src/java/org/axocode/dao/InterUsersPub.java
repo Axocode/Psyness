@@ -2,13 +2,14 @@ package org.axocode.dao;
 
 import java.io.Serializable;
 
-public class InterRealizanPubs implements Serializable{
+public class InterUsersPub implements Serializable{
 
     private InterUsers IUserNum;
     private InterPub PubNumId;
     
-     public InterRealizanPubs(){
+    public InterUsersPub(){
     }
+    
 
     public InterUsers getiUserNum() {
         return IUserNum;

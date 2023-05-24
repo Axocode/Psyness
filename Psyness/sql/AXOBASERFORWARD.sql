@@ -23,6 +23,7 @@ USE `axobase` ;
 CREATE TABLE IF NOT EXISTS `axobase`.`interpub` (
   `PubNumId` INT NOT NULL AUTO_INCREMENT,
   `PubCont` TEXT NULL DEFAULT NULL,
+  `PubMg` INT NULL DEFAULT NULL,
   PRIMARY KEY (`PubNumId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -35,10 +36,10 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `axobase`.`interusers` (
   `IUserNum` INT NOT NULL AUTO_INCREMENT,
   `IUser` VARCHAR(15) NULL DEFAULT NULL,
-  `IAge` INT NULL DEFAULT NULL,
+  `IAge` VARCHAR(2) NULL DEFAULT NULL,
   `IEmail` VARCHAR(40) NULL DEFAULT NULL,
   `IPassword` VARCHAR(25) NULL DEFAULT NULL,
-  `IImgNum` INT NULL DEFAULT NULL,
+  `IImgNum` VARCHAR(1) NULL DEFAULT NULL,
   PRIMARY KEY (`IUserNum`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -46,19 +47,19 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `axobase`.`interrelizanpubusers`
+-- Table `axobase`.`interuserspub`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `axobase`.`interrelizanpubusers` (
-  `PubNumId` INT NULL DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `axobase`.`interuserspub` (
+  `PubNumId` INT NOT NULL AUTO_INCREMENT,
   `IUserNum` INT NULL DEFAULT NULL,
   INDEX `PubNumId` (`PubNumId` ASC) VISIBLE,
   INDEX `IUserNum` (`IUserNum` ASC) VISIBLE,
-  CONSTRAINT `interrelizanpubusers_ibfk_1`
+  CONSTRAINT `interuserspub_ibfk_1`
     FOREIGN KEY (`PubNumId`)
     REFERENCES `axobase`.`interpub` (`PubNumId`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `interrelizanpubusers_ibfk_2`
+  CONSTRAINT `interuserspub_ibfk_2`
     FOREIGN KEY (`IUserNum`)
     REFERENCES `axobase`.`interusers` (`IUserNum`)
     ON DELETE CASCADE

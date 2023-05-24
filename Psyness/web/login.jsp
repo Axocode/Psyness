@@ -38,14 +38,14 @@
             String SIimgNum = user.getIImgNum();
                     
                     
-                    session.setAttribute("SIUser", SIUserNum);
-                    session.setAttribute("SIUser", NombreUsuario);
-                    session.setAttribute("SIAge", SIAge);
-                    session.setAttribute("SIEmail", SIEmail);
-                    session.setAttribute("SIPassword", SIPassword);
-                    session.setAttribute("SIimgNum", SIimgNum);
+                    sesion.setAttribute("SIUserNum", SIUserNum);
+                    sesion.setAttribute("SIUser", NombreUsuario);
+                    sesion.setAttribute("SIAge", SIAge);
+                    sesion.setAttribute("SIEmail", SIEmail);
+                    sesion.setAttribute("SIPassword", SIPassword);
+                    sesion.setAttribute("SIimgNum", SIimgNum);
 
-            session.setAttribute("valido", "creacionValida");
+            sesion.setAttribute("valido", "creacionValida");
             response.sendRedirect("feed.jsp");
             
 

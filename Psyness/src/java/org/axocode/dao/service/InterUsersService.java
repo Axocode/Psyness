@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.axocode.dao.service;
 
 import java.sql.Connection;
@@ -13,11 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.axocode.dao.InterUsers;
 
-
-/**
- *
- * @author gerdoc
- */
 public class InterUsersService extends Conexion<InterUsers>
 {
     public List<InterUsers> getInterUsersList() 
@@ -78,9 +69,7 @@ public class InterUsersService extends Conexion<InterUsers>
         ResultSet resultSet = null;
 
         try {
-            // Establecer la conexión a la base de datos
             connection = getConnection();
-            // Consultar la base de datos para verificar las credenciales
             String query = "SELECT * FROM INTERUSERS WHERE IUSER = ? AND IPASSWORD = ?";
             statement = connection.prepareStatement(query);
             statement.setString(1, IUser);
@@ -90,7 +79,6 @@ public class InterUsersService extends Conexion<InterUsers>
         } catch (SQLException e) {
         e.printStackTrace();
     } finally {
-        // Cerrar los recursos en el orden inverso
         if (resultSet != null) {
             try {
                 resultSet.close();
@@ -144,7 +132,6 @@ public class InterUsersService extends Conexion<InterUsers>
     } catch (SQLException e) {
         e.printStackTrace();
     } finally {
-        // Cerrar los recursos en el orden inverso
         if (resultSet != null) {
             try {
                 resultSet.close();

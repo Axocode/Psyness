@@ -11,6 +11,14 @@ public class InterUsers implements Serializable{
     private String IPassword;
     private String IImgNum;
 
+    public InterUsers() {
+    }
+
+    public InterUsers ( Integer IUserNum) 
+    {
+        this.IUserNum = IUserNum;
+    }
+    
     public Integer getIUserNum() {
         return IUserNum;
     }
