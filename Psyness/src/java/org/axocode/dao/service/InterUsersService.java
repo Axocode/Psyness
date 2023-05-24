@@ -39,7 +39,7 @@ public class InterUsersService extends Conexion<InterUsers>
             if (statement == null) {
                 return null;
             }
-            resultSet = statement.executeQuery("SELECT * FROM InterUsers");
+            resultSet = statement.executeQuery("SELECT * FROM INTERUSERS");
             if (resultSet == null) 
             {
                 return null;
@@ -67,11 +67,119 @@ public class InterUsersService extends Conexion<InterUsers>
         return null;
     }
     
+    
+ 
+
+
+
+    public  boolean validarCredenciales(String IUser, String IPassword) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            // Establecer la conexión a la base de datos
+            connection = getConnection();
+            // Consultar la base de datos para verificar las credenciales
+            String query = "SELECT * FROM INTERUSERS WHERE IUSER = ? AND IPASSWORD = ?";
+            statement = connection.prepareStatement(query);
+            statement.setString(1, IUser);
+            statement.setString(2, IPassword);
+            resultSet = statement.executeQuery();
+            return resultSet.next();
+        } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        // Cerrar los recursos en el orden inverso
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (statement != null) {
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    return false;
+    }
+
+
+
+
+
+    public boolean verificarUserExistente(String IUser) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+       
+        connection = getConnection();
+        
+        String query = "SELECT COUNT(*) FROM INTERUSERS WHERE IUSER = ?";
+        statement = connection.prepareStatement(query);
+        statement.setString(1, IUser);
+        
+        resultSet = statement.executeQuery();
+        
+        if (resultSet.next()) {
+            int count = resultSet.getInt(1);
+            if (count > 0) {
+                return true;
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        // Cerrar los recursos en el orden inverso
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (statement != null) {
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    return false;
+    }
+
+    
+
+    
+    
     public boolean addInterUsers( InterUsers users )
     {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String sql = "INSERT INTO InterUsers(IUserNum,IUser,IAge,IEmail,IPassword,IImgNum) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO INTERUSERS( IUSER , IAGE , IEMAIL , IPASSWORD ) VALUES( ? , ? , ? , ? )";
         int row = 0;
         try 
         {
@@ -85,12 +193,11 @@ public class InterUsersService extends Conexion<InterUsers>
             {
                 return false;
             }
-            preparedStatement.setInt(1, users.getIUserNum());
-            preparedStatement.setString(2, users.getIUser());
-            preparedStatement.setString(3, users.getIAge());
-            preparedStatement.setString(4, users.getIEmail());
-            preparedStatement.setString(5, users.getIPassword());
-            preparedStatement.setString(6, users.getIImgNum());
+            preparedStatement.setString(1, users.getIUser());
+            preparedStatement.setString(2, users.getIAge());
+            preparedStatement.setString(3, users.getIEmail());
+            preparedStatement.setString(4, users.getIPassword());
+
             row = preparedStatement.executeUpdate();
             closeConnection(connection);
             return row == 1;
@@ -106,7 +213,7 @@ public class InterUsersService extends Conexion<InterUsers>
     {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String sql = "update InterUsers SET getIUser=? WHERE IUserNum = ?";
+        String sql = "update INTERUSERS SET IIMGNUM WHERE IUserNum = ?";
         int row = 0;
         try 
         {
@@ -120,7 +227,7 @@ public class InterUsersService extends Conexion<InterUsers>
             {
                 return false;
             }
-            preparedStatement.setString(1, users.getIUser());
+            preparedStatement.setString(1, users.getIImgNum());
             preparedStatement.setInt(2, users.getIUserNum());
             row = preparedStatement.executeUpdate();
             closeConnection(connection);
@@ -163,52 +270,61 @@ public class InterUsersService extends Conexion<InterUsers>
         return false;
     }
     
-    public InterUsers getUserByInterUsers( int IUserNum) 
-    {
-        InterUsers aux = null;
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try 
-        {
-            connection = getConnection();
-            if (connection == null) 
-            {
-                return null;
-            }
-            preparedStatement = connection.prepareStatement("SELECT * FROM InterUsers WHERE IUserNum = ?" );
-            if (preparedStatement == null) 
-            {
-                return null;
-            }
-            preparedStatement.setInt(1, IUserNum );
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet == null) 
-            {
-                return null;
-            }
-            aux = new InterUsers ( );
-            while (resultSet.next()) 
-            {
-                
-                aux.setIUserNum(resultSet.getInt(1));
-                aux.setIUser(resultSet.getString(2));
-                aux.setIAge(resultSet.getString(3));
-                aux.setIEmail(resultSet.getString(4));
-                aux.setIPassword(resultSet.getString(5));
-                aux.setIImgNum(resultSet.getString(6));
-                
-            }
-            resultSet.close();
-            closeConnection(connection);
-            return aux;
-        } 
-        catch (SQLException ex) 
-        {
-            ex.printStackTrace();
+    public InterUsers getUserByInterUsers(String IUser) {
+    InterUsers aux = null;
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
+    
+    try {
+        connection = getConnection();
+        if (connection == null) {
+            return null;
         }
-        return null;
+        
+        preparedStatement = connection.prepareStatement("SELECT * FROM INTERUSERS WHERE IUSER = ?");
+        preparedStatement.setString(1, IUser);
+        
+        resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            aux = new InterUsers();
+            aux.setIUserNum(resultSet.getInt(1));
+            aux.setIUser(resultSet.getString(2));
+            aux.setIAge(resultSet.getString(3));
+            aux.setIEmail(resultSet.getString(4));
+            aux.setIPassword(resultSet.getString(5));
+            aux.setIImgNum(resultSet.getString(6));
+        }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    } finally {
+        // Cerrar los recursos en el orden inverso
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (preparedStatement != null) {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
+    
+    return aux;
+}
+
     
     
 }

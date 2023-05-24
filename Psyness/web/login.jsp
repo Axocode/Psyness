@@ -1,8 +1,7 @@
-
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
-
+<%@page import="org.axocode.dao.InterUsers"%>
+<%@page import="org.axocode.dao.service.InterUsersService"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,26 +15,49 @@
         
     </head>
     <body>
-        <%  
-       //     HttpSession sesion = request.getSession();
-         //   String correoi = null;
-         //   String contrai = null;
-           // List<Idatos>lista = null;
-         //   String Icorreo = null;
-   //         String Icontra = null;
+        <%
+            HttpSession sesion = request.getSession();
+            String guardar = request.getParameter("guardar");
+            if ( "Submit".equals( guardar )) {
+                    
             
+        InterUsersService inter = new InterUsersService();
+        boolean verif = inter.validarCredenciales(request.getParameter("IUser"), request.getParameter("IPassword"));
+
+        if (verif) {
+             String NombreUsuario = request.getParameter("IUser");
+             InterUsers user = inter.getUserByInterUsers(request.getParameter("IUser"));
+
+             
+             if (user != null) {
+             
+            Integer SIUserNum = user.getIUserNum();
+            String SIAge = user.getIAge();
+            String SIEmail = user.getIEmail();
+            String SIPassword = user.getIPassword();
+            String SIimgNum = user.getIImgNum();
+                    
+                    
+                    session.setAttribute("SIUser", SIUserNum);
+                    session.setAttribute("SIUser", NombreUsuario);
+                    session.setAttribute("SIAge", SIAge);
+                    session.setAttribute("SIEmail", SIEmail);
+                    session.setAttribute("SIPassword", SIPassword);
+                    session.setAttribute("SIimgNum", SIimgNum);
+
+            session.setAttribute("valido", "creacionValida");
+            response.sendRedirect("feed.jsp");
             
-//            session = request.getSession( true );
-//            if( session != null )
-//            {
-//                if( session.getAttribute("lista") != null )
-//                {
-//                    lista = (List)session.getAttribute( "lista" );
-//                }
-  //          }
-//            String accion = "verificar";
-//            correoi = request.getParameter("correoi");
-//            contrai = request.getParameter("passi");
+
+            
+        }} else {
+%>
+                        <script>
+                            alert("No existe el usuario");
+                        </script>
+<%               
+        }
+        }
         %>
         <div class="wrapper">
         <div class="container main">
@@ -52,15 +74,15 @@
                         <header>Iniciar Sesion</header>
                         <form id="form2" >
                             <div class="input-field">
-                                <input id="correoi" name="correoi" value="" type="text" class="input" required onblur="validar(form.correo.value)"/>
+                                <input id="IUser" name="IUser" value="<%= request.getParameter("IUser") %>" type="text" class="input" required />
                                 <label for="correoi">Nombre</label>
                             </div>
                             <div class="input-field">
-                                <input id="passi" name="passi" value="" type="password" class="input" required onblur="validar(form.correo.value)"/> 
+                                <input id="IPassword" name="IPassword" value="<%= request.getParameter("IPassword") %>" type="password" class="input" required /> 
                                 <label for="passi">Contraseña</label>
                             </div>
                             <div class="input-field">
-                                <input type="submit" id="comprobar" name="" class="submit" />     
+                               <input class="submit" type="submit" id="guardar" name="guardar" value="Submit" />
                             </div>
                             <div class="signin">
                                 <span>No tienes una cuenta? <a href="index.jsp">Crear cuenta</a></span>
@@ -71,31 +93,7 @@
             </div>
         </div>
     </div>
-                                <!--<form id="form2">
-            <table border="1">
-                <tr>                   
-                    <td>Correo</td>
-                    <td><input id="correoi" name="correoi" value="</*%=correoi%>" type="text"/></td>                   
-                </tr>
-                <tr>                    
-                    <td>Contraseña</td>
-                    <td><input id="passi" name="passi" value="</*%=contrai%>" type="password"/>                      
-                    </td>
-                </tr>
-                <tr >
-                    <td colspan="2">
-                        <input type="submit" id="comprobar" name="</*%=accion%>" />
-                    </td>
-                </tr>
-            </table>
-        </form>-->
-                    <%
-                  //      if (correoi == "")
-                    //        out.println("el correo es" + correoi);
-//                        if( lista != null && !lista.isEmpty() )
-                  //      {
-  //                          for (Idatos datos : lista) {
-    //                                if (datos.getIcorreo().equals(correoi) && datos.getIcontra().equals(contrai) ){%> 
+                     
 
                                     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                                     <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -116,22 +114,6 @@
 
                                         </div>
                                     </div> 
-                               
-                            <%
-       //                         String cadenaEsp = datos.getIusuario().replaceAll(" ","").toLowerCase();
-      //                          sesion.setAttribute("Idprima", cadenaEsp);
-        //                        sesion.setAttribute("INombreuser", datos.getIusuario());
-//
-  //                               response.sendRedirect("feed.jsp");
-    //                             }
-//
-  //                              else{
-    //                                
-      //                          }
-        //                }  
-          //          }
-                    %>  
-                    
                     <script>
                     document.getElementsByTagName("input")[0].value = "";
                     document.getElementsByTagName("input")[1].value = "";

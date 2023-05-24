@@ -4,18 +4,18 @@ import java.io.Serializable;
 
 public class InterUsers implements Serializable{
     
-    private int IUserNum;
+    private Integer IUserNum;
     private String IUser;
     private String IAge;
     private String IEmail;
     private String IPassword;
     private String IImgNum;
 
-    public int getIUserNum() {
+    public Integer getIUserNum() {
         return IUserNum;
     }
 
-    public void setIUserNum(int IUserNum) {
+    public void setIUserNum(Integer IUserNum) {
         this.IUserNum = IUserNum;
     }
 
@@ -25,6 +25,14 @@ public class InterUsers implements Serializable{
 
     public void setIUser(String IUser) {
         this.IUser = IUser;
+    }
+
+    public String getIAge() {
+        return IAge;
+    }
+
+    public void setIAge(String IAge) {
+        this.IAge = IAge;
     }
 
     public String getIEmail() {
@@ -43,14 +51,6 @@ public class InterUsers implements Serializable{
         this.IPassword = IPassword;
     }
 
-    public String getIAge() {
-        return IAge;
-    }
-
-    public void setIAge(String IAge) {
-        this.IAge = IAge;
-    }
-
     public String getIImgNum() {
         return IImgNum;
     }
@@ -58,5 +58,7 @@ public class InterUsers implements Serializable{
     public void setIImgNum(String IImgNum) {
         this.IImgNum = IImgNum;
     }
+
+
 
 }

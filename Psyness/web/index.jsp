@@ -1,11 +1,6 @@
-
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
-<%--
-    <%@page import="interDatos.Idatos"%>
---%>
 <%@page session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
   
 <!DOCTYPE html>
 <html>
@@ -21,91 +16,17 @@
     
     </head>
     <body>
-        
-        <%      
 
-            String contrai = "";
-            String actualizar = "guardar";
-            HttpSession sesion = request.getSession();
-            String Iusuario = null;
-            String Icorreo = null;
-            String correoi = null;
-            String Icontra = null;
-            String Iedad = null;
-            String Iid = null;
-            String guardar = null;
-            String accion = "guardar";
- //           Idatos datos = null;
-            Integer idx = null;
-            String cadenaEsp = null;
-   //         List<Idatos>lista = null;
-            
-            if (request.getParameter("cerrar")!= null) {
+        <%
+        HttpSession sesion = request.getSession();
+        if (request.getParameter("cerrar")!= null) {
                     session.invalidate();
-                    %>
-                    <script>window.location.href = "feed2.jsp";</script>
+%>
+                    <script>window.location.href = "feed.jsp";</script>
                     <%
                 }
-                
-            session = request.getSession( true );
-            if( session != null )
-            {
-                if( session.getAttribute("lista") == null )
-                {
-     //               session.setAttribute("lista", new ArrayList<Idatos>());
-                }
-     //           lista = (List)session.getAttribute("lista");
-            }
-            Iusuario = request.getParameter( "user" );
-            Icorreo = request.getParameter( "correo" );
-            Icontra = request.getParameter( "pass" );
-            Iedad = request.getParameter( "edad" );
-            guardar = request.getParameter( "guardar" );
-
-            
-            if( "Submit".equals( guardar ) )
-            {
-                if( "Submit".equals( guardar ) )
-                {
-       //             datos = new Idatos( );
-                }
-                else
-                {
-         //           datos = lista.get( Integer.parseInt( Iid ) );
-                }
-           //     datos.setIusuario(Iusuario);
-             //   datos.setIcontra(Icontra);
-               // datos.setIcorreo(Icorreo);
-                //datos.setIedad(Iedad);
-                
-                cadenaEsp = Iusuario.replaceAll(" ","").toLowerCase();
-                //datos.setIid(cadenaEsp);
-                
-                sesion.setAttribute("Idprima", cadenaEsp);
-                sesion.setAttribute("INombreuser", Iusuario);
-
-                
-                if( "Submit".equals( guardar ) )
-                {
-//                    lista.add( datos );
-                    response.sendRedirect("feed3.jsp");
-                    
-                }
+        response.sendRedirect("Session.jsp?accion=Nuevo");
         %>
-            
-        <% } 
-                   
-  //          if( datos == null )
-            {
-    //            datos = new Idatos( );
-      //          datos.setIusuario("");               
-        //        datos.setIcontra("");
-          //      datos.setIcorreo("");
-            //    datos.setIedad("");
-            }
-            if( !"Submit".equals( guardar ) )
-            {
-        %>  
         <div class="wrapper">
         <div class="container main">
             <div class="row">
@@ -119,25 +40,26 @@
                 <div class="col-md-6 right">
                      <div class="input-box">
                         <header>Crear cuenta</header>
-                        <form id="form1" method="POST">
+                        <form id="form1" action="Session.jsp" >
                             <div class="input-field">
-                                <input id="user" name="user" value=" <%-- <%=datos.getIusuario()%> --%>" type="text" class="input"  minlength="6" maxlength="13" required/>
+                                <input id="IUser" name="IUser" value="${param.IUser}"${param.readonly} type="text" class="input"  minlength="6" maxlength="13" required/>
                                 <label for="user">Nombre de Usuario</label>
                             </div>
                             <div class="input-field">
-                                <input id="edad" name="edad" value=" <%-- <%=datos.getIusuario()%> --%>" type="text" class="input" required/>
+                                <input id="IAge" name="IAge" value="${param.IAge}" type="text" class="input" required   maxlength="2"  />
                                 <label for="edad">Edad</label>
                             </div>
                             <div class="input-field">
-                                <input id="correo" name="correo" value="<%-- <%=datos.getIusuario()%> --%>" type="email" class="input" required onblur="validar(form.correo.value)" />
+                                <input id="IEmail" name="IEmail" value="${param.IEmail}" type="email" class="input" required onblur="validar(form.correo.value)" maxlength="40" />
                                 <label for="correo">Correo</label>
                             </div>
                             <div class="input-field">
-                                <input id="pass" name="pass" value="<%-- <%=datos.getIusuario()%> --%>" type="password" class="input" required/> 
+                                <input id="IPassword" name="IPassword" value="${param.IPassword}" type="password" class="input" required maxlength="25"/> 
                                 <label for="pass">Contraseña</label>
                             </div>
                             <div class="input-field">
-                                <input type="submit" id="Guardar" name="<%=accion%>"  class="submit"/>     
+                                <input id="accion" type="hidden" value="Guardar" name="accion"  class="submit" value="${param.accion}">
+                                <input id="action" type="submit" value="Empezar" name="action" class="submit" value="${param.accion}"> 
                             </div>
                             <div class="signin">
                                 <span>Ya tienes una cuenta? <a href="login.jsp">Iniciar Sesion</a></span>
@@ -148,7 +70,41 @@
             </div>
         </div>
     </div>
-        <% } %>
+                                
+    <script>
+        <!--
+        function validateTexto( obj , textoError, campoError )
+        {
+            if( obj.value === undefined || obj.value.length <= 0 )
+            {
+                campoError.innerHTML = "<b>" + textoError + "</b>";
+                return false;
+            }
+            campoError.innerHTML = " ";
+            return true;
+        
+        }
+        
+        function validateForm( )
+        {
+            const arr = ['IUser' , 'IAge', 'IEmail' , 'IPassword'];
+            let obj1, obj2;
+            
+            var flag = true;
+            for( const aux of arr )
+            {
+                obj1 = document.getElementById( aux );
+                obj2 = document.getElementById( aux + 'Error' );
+                if( !validateTexto( obj1 , "El campo " + aux + " es requerido" , obj2 ) )
+                {
+                    flag = false;
+                }
+            }
+            return flag;
+        }
+        -->
+    </script>
+        
          <script>
             function validar(correo){
                  var expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;

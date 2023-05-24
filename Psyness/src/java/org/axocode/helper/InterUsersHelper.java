@@ -24,7 +24,10 @@ public class InterUsersHelper extends Helpers<InterUsers> implements Serializabl
     
     public boolean isValidaCamposOk( )
     {
-        return isNotNullAndNotEmpity( t.getIUser()) && isNotNullAndNotEmpity( t.getIPassword() ) && isNotNullAndNotEmpity( t.getIEmail()) && isNotNullAndNotEmpity( t.getIAge());
+        return isNotNullAndNotEmpity( t.getIUser()) 
+               && isNotNullAndNotEmpity( t.getIPassword() ) 
+               && isNotNullAndNotEmpity( t.getIEmail()) 
+               && isNotNullAndNotEmpity( t.getIAge());
     }
 
     @Override
@@ -32,6 +35,8 @@ public class InterUsersHelper extends Helpers<InterUsers> implements Serializabl
     {
         usersService = new InterUsersService();
         t = new InterUsers();
+        
+        
         t.setIUser(getParameter("IUser"));
         t.setIAge(getParameter("IAge"));
         t.setIEmail(getParameter("IEmail"));
@@ -92,7 +97,7 @@ public class InterUsersHelper extends Helpers<InterUsers> implements Serializabl
         return false;
         
     }
-
+/*
     @Override
     public InterUsers getTByKey() 
     {
@@ -106,5 +111,10 @@ public class InterUsersHelper extends Helpers<InterUsers> implements Serializabl
         usersService = new InterUsersService();
         return usersService.getUserByInterUsers( INumUser );
     }
-    
+ */   
+
+    @Override
+    public InterUsers getTByKey() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
