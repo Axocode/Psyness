@@ -280,8 +280,8 @@
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
-                        <p id="username">1234</p>
-                        <small>JAFNA</small>
+                        <p id="username"><%=sesion.getAttribute("SIUser")%></p>
+                        <small><%=sesion.getAttribute("SIAge")%></small>
                     </div>   
                 </div>
                 <br>
