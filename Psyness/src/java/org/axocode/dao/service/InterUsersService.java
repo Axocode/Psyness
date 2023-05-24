@@ -108,7 +108,6 @@ public class InterUsersService extends Conexion<InterUsers>
 
 
 
-
     public boolean verificarUserExistente(String IUser) {
         Connection connection = null;
         PreparedStatement statement = null;
@@ -157,7 +156,6 @@ public class InterUsersService extends Conexion<InterUsers>
     
     return false;
     }
-
     
 
     
