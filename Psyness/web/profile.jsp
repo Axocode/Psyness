@@ -23,6 +23,11 @@
         <link rel="icon" type="image/jpg" href="images/favicon.jpg"/>    
     </head>
     <body>
+        <%
+    HttpSession sesion = request.getSession();
+          if (sesion.getAttribute("SIUser") != null){}
+          else{out.print("<script>location.replace('index.jsp');</script>");}                        
+%> 
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
         <div class="container" id="container">
@@ -49,7 +54,7 @@
                     </li>
 
                     <li>
-                        <a href="feed2.jsp">
+                        <a href="feed.jsp">
                             <i class="fa-sharp fa-solid fa-house"></i>
                             <span class="links_name">Inicio</span>
                         </a>
@@ -144,7 +149,7 @@
                         </div>
                     </div>
                     <div>
-                        <h1>Nombre de usuario<br><span class="badge bg-secondary">Edad</span></h1>                       
+                        <h1><%=sesion.getAttribute("SIUser")%><br><span class="badge bg-secondary">Edad</span></h1>                       
                     </div>
 
                 </div>
@@ -236,8 +241,8 @@
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
-                        <p id="username">1234</p>
-                        <small>JAFNA</small>
+                        <p id="username"><%=sesion.getAttribute("SIUser")%></p>
+                        <small><%=sesion.getAttribute("SIAge")%></small>
                     </div>   
                 </div>
                 <br>
