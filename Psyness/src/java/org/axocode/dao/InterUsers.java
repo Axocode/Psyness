@@ -11,6 +11,16 @@ public class InterUsers implements Serializable{
     private String IPassword;
     private String IImgNum;
 
+    
+    public InterUsers(Integer IUserNum, String IUser, String IAge, String IEmail, String IPassword, String IImgNum) {
+    this.IUserNum = IUserNum;
+    this.IUser = IUser;
+    this.IAge = IAge;
+    this.IEmail = IEmail;
+    this.IPassword = IPassword;
+    this.IImgNum = IImgNum;
+}
+    
     public InterUsers() {
     }
 

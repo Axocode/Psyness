@@ -157,7 +157,38 @@ public class InterUsersService extends Conexion<InterUsers>
     return false;
     }
     
+    public InterUsers getInterUsersByPubNumId(int pubNumId) {
+        InterUsers interUsers = null;
 
+        try (Connection connection = getConnection()) {
+            String sql = "SELECT INTERUSERS.* " +
+                         "FROM INTERUSERS " +
+                         "INNER JOIN INTERUSERSPUB ON INTERUSERS.IUserNum = INTERUSERSPUB.IUserNum " +
+                         "WHERE INTERUSERSPUB.PubNumId = ?";
+            
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setInt(1, pubNumId);
+
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (resultSet.next()) {
+                        // Obtener los datos del resultado y construir un objeto InterUsers
+                        int IUserNum = resultSet.getInt("IUserNum");
+                        String IUser = resultSet.getString("IUser");
+                        String IAge = resultSet.getString("IAge");
+                        String IEmail = resultSet.getString("IEmail");
+                        String IPassword = resultSet.getString("IPassword");
+                        String IImgNum = resultSet.getString("IImgNum");
+
+                        interUsers = new InterUsers(IUserNum, IUser, IAge, IEmail, IPassword, IImgNum);
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return interUsers;
+    }
     
     
     public boolean addInterUsers( InterUsers users )

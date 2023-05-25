@@ -261,38 +261,26 @@
                     </div>
                 </div>
             </div>
-  <%
+<%
         InterPubHelper pubHelper = new InterPubHelper();
         List<InterPub>list = pubHelper.getListT();
-        //Collections.reverse(list);
-        
+        Collections.reverse(list);
+
         if( list != null && list.size() > 0)
         {
         for(InterPub trows : list)
         {
-            int PubNumId = (trows.getPubNumId());
-            InterUsersPubService service = new InterUsersPubService();
-            InterUsersPub interUsersPub = service.getInterUsersByInterUsersPub(PubNumId);
-         //int iUserNumValue = interUsersPub.getiUserNum().getIUserNum();
-            
-              
+           InterUsersService dao = new InterUsersService();
+           InterUsers interUsers = dao.getInterUsersByPubNumId(trows.getPubNumId());
 
-                
-
-        //int numId = interUsersPub.getiUserNum().getIUserNum();
-        
-        //InterUsersService service2 = new InterUsersService();
-        //InterUsers interUsers = service2.getUserByInterUsersNum(numId); 
-        
-         
+           if (interUsers != null) {
     %>
             <div class="post-container">
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png">
                     <div>
-                        <p></p>
+                        <p><%=interUsers.getIUser()%></p>
                         <small><%=trows.getPubNumId()%></small>
-                        <small></small>
                     </div>
                 </div>
                 <br>
@@ -309,7 +297,7 @@
                 </div>
             </div>
             <%
-                }}
+                }}}
             %>
         </div>
         <!-----------------------------------right-sidebar(VERGAS)------------------------------------------------------------------------->
