@@ -293,15 +293,10 @@
                 <br>
                 <div class="stats">
                     <div class="activity-icons">
-<<<<<<< HEAD
+
                         <div><a href="#"><img src="images/heart.png">500k</a></div>
                         <div><a href="#"><img src="images/star.png">120</a></div>
                         <div><a href="followers.jsp"><img src="images/friends.png">Seguidores</a></div>
-=======
-                        <div><img src="images/heart.png"></a></div>
-                        <div><img src="images/star.png"></a></div>
-                        <div><img src="images/friends.png"></div>
->>>>>>> e1483b4dd535261253918d5e6ef7f45c1e46e6c7
                     </div>
                 </div>
                 </a>
