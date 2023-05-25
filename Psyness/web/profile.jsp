@@ -3,6 +3,12 @@
     Created on : 19 may 2023, 19:17:04
     Author     : BD1
 --%>
+<%@page import="org.axocode.dao.InterUsers"%>
+<%@page import="org.axocode.dao.service.InterUsersService"%>
+<%@page import="java.util.Collections"%>
+<%@page import="org.axocode.dao.InterPub"%>
+<%@page import="java.util.List"%>
+<%@page import="org.axocode.helper.InterPubHelper"%>
 <%@page session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -28,6 +34,24 @@
     HttpSession sesion = request.getSession();
     if (sesion.getAttribute("SIUser") != null){}
     else{out.print("<script>location.replace('index.jsp');</script>");}                        
+    String nombre =null;
+    String edad = null;
+    
+        InterPubHelper pubHelper = new InterPubHelper();
+        List<InterPub>list = pubHelper.getListT();
+        Collections.reverse(list);
+        if( list != null && list.size() > 0)
+        {
+        for(InterPub trows : list)
+        {
+           InterUsersService dao = new InterUsersService();
+           InterUsers interUsers = dao.getInterUsersByPubNumId(trows.getPubNumId());
+           if (interUsers != null) {
+           if ((request.getParameter("id").toString()).equals(interUsers.getIUserNum().toString())) {
+            nombre = (interUsers.getIUser());
+            edad = (interUsers.getIAge());
+            
+    }}}}
 %>  
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v16.0" nonce="RJPKicjE"></script>
@@ -150,16 +174,18 @@
                         </div>
                     </div>
                     <div>
-                        <h1><%=sesion.getAttribute("SIUser")%><br><span class="badge bg-secondary">Edad</span></h1>                       
+                        <h1><%=nombre%><br><span class="badge bg-secondary"><%=edad%></span></h1>                       
                     </div>
 
                 </div>
                
                 <div class="post-row">
                     <div class="activity-icons">
-                        <div><a href="#"><img src="images/heart.png">43</a></div>
-                        <div><a href="#"><img src="images/star.png">43</a></div>
+                        <div><a href="#"><img src="images/heart.png"></a></div>
+                        <div><a href="#"><img src="images/star.png"></a></div>
+                        <%if (!nombre.equals(sesion.getAttribute("SIUser"))) {%>
                         <div><a href="#"><img src="images/follow.png">Seguir</a></div>
+                        <%}%>
                     </div>
                     <div class="post-profile-icon">
 
@@ -211,29 +237,47 @@
                     </div>
             </div>
             <div class="main-content">
-                    <div class="post-container">
-                        <div class="user-profile">
-                            <img src="images/perfilsidebar.png">
-                            <div>
-                                <p>1422</p>
-                                <small>Public</small>
-                            </div>
-                        </div>
-                        <br>
-                        <p class="post-text">
-                            3424
-                        </p>
-                        <div class="post-row">
-                            <div class="activity-icons">
-                                <div><a href="#"><img src="images/heart.png">43</a></div>
-                                <div><a href="#"><img src="images/star.png">43</a></div>
-                                <div><a href="#"><img src="images/follow.png">Seguir</a></div>
-                            </div>
-                            <div class="post-profile-icon">
+                    <%
+        Collections.reverse(list);
 
-                            </div>
+        if( list != null && list.size() > 0)
+        {
+        for(InterPub trows : list)
+        {
+           InterUsersService dao = new InterUsersService();
+           InterUsers interUsers = dao.getInterUsersByPubNumId(trows.getPubNumId());
+
+           if (interUsers != null) {
+           if ((request.getParameter("id").toString()).equals(interUsers.getIUserNum().toString())) {
+                   
+               
+    %>
+            <div class="post-container">
+                <div class="user-profile">
+                    <a href="profile.jsp?id=<%=interUsers.getIUserNum()%>" style="text-decoration:none"><img src="images/perfilsidebar.png"></a>
+                    <div>
+                        <a href="profile.jsp?id=<%=interUsers.getIUserNum()%>" style="text-decoration:none"><p><%=interUsers.getIUser()%></p></a>
+                        <a href="profile.jsp?id=<%=interUsers.getIUserNum()%>" style="text-decoration:none"><small>Public</small></a>
                     </div>
                 </div>
+                <br>
+                <p class="post-text"><%=trows.getPubCont()%></p>
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><a href="#"><img src="images/heart.png"><%=trows.getPubMg()%></a></div>
+                        <div><a href="#"><img src="images/star.png"></a></div>
+                        <%if (!interUsers.getIUser().equals(sesion.getAttribute("SIUser"))) {%>
+                        <div><a href="#"><img src="images/follow.png">Seguir</a></div>
+                        <%}%>
+                    </div>
+                    <div class="post-profile-icon">
+
+                    </div>
+                </div>
+            </div>
+            <%
+                }}}}
+            %>
                 </div>
             </div>
             <div class="right-sidebar" >

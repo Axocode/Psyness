@@ -277,10 +277,10 @@
     %>
             <div class="post-container">
                 <div class="user-profile">
-                    <img src="images/perfilsidebar.png">
+                    <a href="profile.jsp?id=<%=interUsers.getIUserNum()%>" style="text-decoration:none"><img src="images/perfilsidebar.png"></a>
                     <div>
-                        <p><%=interUsers.getIUser()%></p>
-                        <small><%=trows.getPubNumId()%></small>
+                        <a href="profile.jsp?id=<%=interUsers.getIUserNum()%>" style="text-decoration:none"><p><%=interUsers.getIUser()%></p></a>
+                        <a href="profile.jsp?id=<%=interUsers.getIUserNum()%>" style="text-decoration:none"><small>Public</small></a>
                     </div>
                 </div>
                 <br>
@@ -289,7 +289,9 @@
                     <div class="activity-icons">
                         <div><a href="#"><img src="images/heart.png"><%=trows.getPubMg()%></a></div>
                         <div><a href="#"><img src="images/star.png"></a></div>
+                        <%if (!interUsers.getIUser().equals(sesion.getAttribute("SIUser"))) {%>
                         <div><a href="#"><img src="images/follow.png">Seguir</a></div>
+                        <%}%>
                     </div>
                     <div class="post-profile-icon">
 
@@ -303,7 +305,7 @@
         <!-----------------------------------right-sidebar(VERGAS)------------------------------------------------------------------------->
         <div class="right-sidebar">
             <div class="sidebar-profile">
-                <a href="profile.jsp?id=<%=sesion.getAttribute("SIUser")%>" class="a-perfil" style="text-decoration:none">                    
+                <a href="profile.jsp?id=<%=sesion.getAttribute("SIUserNum")%>" class="a-perfil" style="text-decoration:none">                    
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
