@@ -1,3 +1,13 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/05/2023, 9:48:07 PM
+    Author     : admin
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -575,8 +585,8 @@ Publicar
         align-items: center;
         margin-left: 10%;
         transform: scale(75%);
-        margin-top: -220px;
-        margin-bottom: -220px;
+        margin-top: -05px;
+        margin-bottom: -05px;
         z-index: 50;
     }
     
@@ -604,82 +614,3 @@ Publicar
 }
     
 }
-
-
-/*Intento de Responsive SideRight
-@media screen and (max-width: 1198px) {
-    --
-    .right-sidebar{  
-        width: 25%;
-        --flex-basis: 25%;
-        position: sticky;
-        top: 10px;
-        align-self: flex-start;  
-        --margin-left: 10%;
-        display: none;
-    }
-    --
-    
-    .img_sideright{
-        height: 30%;
-        width: 30%;
-        opacity: 1;
-    }
-    
-    .user_sideright{
-        display: none;
-        opacity: 0;
-    }
-    
-    .stats{
-        display: none;
-        opacity: 0;
-    }
-    
-    .suggested{
-        width: 130%;
-        height: 70%;
-        background: #fff;
-        display: none;
-        opacity: 0;
-    }
-    
-    .trends{
-        width: 130%;
-        height: 70%;
-        background: #fff;
-        display: none;
-        opacity: 0;
-    }
-    
-    .cont-feis{
-        width: 130%;
-        display: none;
-        opacity: 0;
-    }
-}
-
-
-    .img_sideright{
-        margin-right: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    #username{
-        margin-left: 0px;
-        transform: translateX(-220%);
-    }
-    
-    .user_sideright small{
-        margin-left: 0px;
-        left: 0;
-        transform: translateX(-220%);
-    }
-    
-    .img_sideright.active{
-        position: inherit;
-    }
-    
-*/
-

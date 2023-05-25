@@ -1,3 +1,13 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/05/2023, 9:45:05 PM
+    Author     : admin
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -575,8 +585,8 @@ Publicar
         align-items: center;
         margin-left: 10%;
         transform: scale(75%);
-        margin-top: -220px;
-        margin-bottom: -220px;
+        margin-top: -130px;
+        margin-bottom: -130px;
         z-index: 50;
     }
     

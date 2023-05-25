@@ -310,7 +310,7 @@ Publicar
 /*Side bar Izquierda*/
 
 .left_sidebar{
-    background: #000;
+    background: #141414;
     flex-basis: 25%;
     position: fixed;
     top: -0.5%;
@@ -581,9 +581,14 @@ Publicar
     .main-content{
         left: 0;
         align-items: center;
-        margin-left: 05%;
+        margin-left: 08%;
         transform: scale(80%);
+        z-index: 50;
     }
+    .left_sidebar{
+        z-index: 99;
+    }
+    
 }
 
 @media screen and (max-width: 200px) {
