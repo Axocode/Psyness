@@ -256,7 +256,7 @@
                     <div class="activity-icons">
                         <div><img src="images/heart.png"></a></div>
                         <div><img src="images/star.png"></a></div>
-                        <div><img src="images/friends.png"></div>
+                        <div><a href="followers.jsp"><img src="images/friends.png">Seguidores</a></div>
                     </div>
                 </div>
                 </a>
