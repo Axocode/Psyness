@@ -47,6 +47,21 @@
     transition: all 0.5s ease;
 }
 
+.dropdown-container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+.dropdown-content {
+      display: none;
+      z-index: 5;
+      position: absolute;
+      top: 110%;
+    }
+    
+
+
 .left_sidebar .logo_content .img_responsive{
     display: none;
     opacity: 0;
@@ -337,6 +352,18 @@
 }
 
 .card1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+
+.card3{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -794,4 +821,13 @@
 
 .badge{
     font-size: 1em !important; 
+}
+
+.list-group-item{
+    z-index: 3;
+}
+
+.list-group{
+    margin-top: 20% !important;
+    height: 20% !important;
 }

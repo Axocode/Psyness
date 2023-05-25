@@ -45,7 +45,19 @@
                 <ul class="nav_list">
                     <li>
                         <i class="fas fa-search" id="fa-search"></i>
-                        <input type="text" placeholder="Buscar">
+                        <input type="text" id="myInput" placeholder="Buscar">
+                        <div class="dropdown-container">
+                        
+                        <div class="dropdown-content">
+                            <ul class="list-group">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </div>
+                        </div>
                     </li>
 
                     <li>
@@ -375,6 +387,15 @@
             </div>
             
         </div>
-
+            <script>
+                document.getElementById("myInput").addEventListener("click", function() {
+                var dropdownContent = document.getElementsByClassName("dropdown-content")[0];
+                if (dropdownContent.style.display === "none") {
+                  dropdownContent.style.display = "block";
+                } else {
+                  dropdownContent.style.display = "none";
+                }
+              });
+            </script>
     </body>
 </html>
