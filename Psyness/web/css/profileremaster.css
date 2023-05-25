@@ -34,7 +34,9 @@
 .left_sidebar.active{
     width: 78px;
 }
-
+.dropdown-content {
+      display: none;
+    }
 .left_sidebar .logo_content .img{
     display: flex;
     margin-top: 30px;
@@ -325,7 +327,7 @@
 }
 
 .main-content{
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     width: 100%;
 
