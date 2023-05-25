@@ -310,6 +310,59 @@ public class InterUsersService extends Conexion<InterUsers>
     return aux;
 }
 
+    public InterUsers getUserByInterUsersNum(int IUserNum) {
+    InterUsers aux = null;
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
     
+    try {
+        connection = getConnection();
+        if (connection == null) {
+            return null;
+        }
+        
+        preparedStatement = connection.prepareStatement("SELECT * FROM INTERUSERS WHERE IUSERNUM = ?");
+        preparedStatement.setInt(1, IUserNum);
+        
+        resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            aux = new InterUsers();
+            aux.setIUserNum(resultSet.getInt(1));
+            aux.setIUser(resultSet.getString(2));
+            aux.setIAge(resultSet.getString(3));
+            aux.setIEmail(resultSet.getString(4));
+            aux.setIPassword(resultSet.getString(5));
+            aux.setIImgNum(resultSet.getString(6));
+        }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    } finally {
+        // Cerrar los recursos en el orden inverso
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (preparedStatement != null) {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    return aux;
+}
     
 }

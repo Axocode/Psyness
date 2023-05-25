@@ -131,47 +131,54 @@ public class InterUsersPubService extends Conexion<InterUsersPub>{
         return false;
     }
     
-    public InterUsersPub getInterUsersPubByInterUsersPub( Integer PubNumId , Integer IUserNum) 
+    public InterUsersPub getInterUsersByInterUsersPub( int PubNumId ) 
     {
         InterUsersPub aux = null;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        try 
-        {
-            connection = getConnection();
-            if (connection == null) 
-            {
-                return null;
-            }
-            preparedStatement = connection.prepareStatement("SELECT * FROM INTERUSERSPUB WHERE PUBNUMID = ? AND IUSERNUM = ?" );
-            if (preparedStatement == null) 
-            {
-                return null;
-            }
-            preparedStatement.setInt(1,  PubNumId);
-            preparedStatement.setInt(2, IUserNum );
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet == null) 
-            {
-                return null;
-            }
-            aux = new InterUsersPub ( );
-            while (resultSet.next()) 
-            {
-                
-                aux.setPubNumId(new InterPub(resultSet.getInt(1)) );
-                aux.setiUserNum(new InterUsers(resultSet.getInt(2)));
-            }
-            resultSet.close();
-            closeConnection(connection);
-            return aux;
-        } 
-        catch (SQLException ex) 
-        {
-            ex.printStackTrace();
+        try {
+        connection = getConnection();
+        if (connection == null) {
+            return null;
         }
-        return null;
+            preparedStatement = connection.prepareStatement("SELECT IUSERNUM FROM INTERUSERSPUB WHERE PUBNUMID = ? " );
+            preparedStatement.setInt(1,  PubNumId);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) 
+            {
+                aux = new InterUsersPub();
+            aux.setPubNumId(new InterPub(resultSet.getInt(1)));
+            aux.setiUserNum(new InterUsers(resultSet.getInt(2)));
+            
+            }
+        }catch (SQLException ex) {
+        ex.printStackTrace();
+    } finally {
+        
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (preparedStatement != null) {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                }
+            }
+        }
+        return aux;
     }
     
     

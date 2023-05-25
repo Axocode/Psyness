@@ -3,6 +3,9 @@
     Created on : 7 may. 2023, 20:33:13
     Author     : Admin
 --%>
+<%@page import="org.axocode.dao.service.InterUsersService"%>
+<%@page import="java.util.Comparator"%>
+<%@page import="java.util.List"%>
 <%@page import="org.axocode.dao.InterUsers"%>
 <%@page import="org.axocode.helper.InterUsersHelper"%>
 <%@page import="org.axocode.dao.service.InterUsersPubService"%>
@@ -67,9 +70,8 @@
 
                 InterUsersPubService interUsersPubService = new InterUsersPubService();
                 boolean success = interUsersPubService.addUsersPub(contextInterses);
-
                 
-                    
+                   response.sendRedirect("error.jsp"); 
                     
     }
 %>
@@ -259,23 +261,46 @@
                     </div>
                 </div>
             </div>
- 
+  <%
+        InterPubHelper pubHelper = new InterPubHelper();
+        List<InterPub>list = pubHelper.getListT();
+        //Collections.reverse(list);
+        
+        if( list != null && list.size() > 0)
+        {
+        for(InterPub trows : list)
+        {
+            int PubNumId = (trows.getPubNumId());
+            InterUsersPubService service = new InterUsersPubService();
+            InterUsersPub interUsersPub = service.getInterUsersByInterUsersPub(PubNumId);
+         //int iUserNumValue = interUsersPub.getiUserNum().getIUserNum();
+            
+              
+
+                
+
+        //int numId = interUsersPub.getiUserNum().getIUserNum();
+        
+        //InterUsersService service2 = new InterUsersService();
+        //InterUsers interUsers = service2.getUserByInterUsersNum(numId); 
+        
+         
+    %>
             <div class="post-container">
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png">
                     <div>
-                        <p>1422</p>
-                        <small>Public</small>
+                        <p></p>
+                        <small><%=trows.getPubNumId()%></small>
+                        <small></small>
                     </div>
                 </div>
                 <br>
-                <p class="post-text">
-                    3424
-                </p>
+                <p class="post-text"><%=trows.getPubCont()%></p>
                 <div class="post-row">
                     <div class="activity-icons">
-                        <div><a href="#"><img src="images/heart.png">43</a></div>
-                        <div><a href="#"><img src="images/star.png">43</a></div>
+                        <div><a href="#"><img src="images/heart.png"><%=trows.getPubMg()%></a></div>
+                        <div><a href="#"><img src="images/star.png"></a></div>
                         <div><a href="#"><img src="images/follow.png">Seguir</a></div>
                     </div>
                     <div class="post-profile-icon">
@@ -283,12 +308,14 @@
                     </div>
                 </div>
             </div>
-
+            <%
+                }}
+            %>
         </div>
         <!-----------------------------------right-sidebar(VERGAS)------------------------------------------------------------------------->
         <div class="right-sidebar">
             <div class="sidebar-profile">
-                <a href="profile.jsp" class="a-perfil" style="text-decoration:none">                    
+                <a href="profile.jsp?id=<%=sesion.getAttribute("SIUser")%>" class="a-perfil" style="text-decoration:none">                    
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>

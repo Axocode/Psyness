@@ -82,19 +82,16 @@ public class InterUsersPubHelper extends Helpers<InterUsersPub> implements Seria
     public InterUsersPub getTByKey() 
     {
         Integer PubNumId = null;
-        Integer IUserNum = null;
+        
         
         PubNumId = Integer.parseInt(getParameter("PubNumId" ));
-        IUserNum = Integer.parseInt(getParameter("IUserNum" ));
+        
         if( PubNumId == null || PubNumId <= 0 )
         {
             return null;
         }
-        if( IUserNum == null || IUserNum <= 0 )
-        {
-            return null;
-        }
+        
         conextionService = new InterUsersPubService( );
-        return conextionService.getInterUsersPubByInterUsersPub(PubNumId, IUserNum);
+        return conextionService.getInterUsersByInterUsersPub(PubNumId);
     }
 }
