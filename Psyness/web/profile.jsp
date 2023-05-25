@@ -293,9 +293,9 @@
                 <br>
                 <div class="stats">
                     <div class="activity-icons">
-                        <div><img src="images/heart.png">500k</a></div>
-                        <div><img src="images/star.png">120</a></div>
-                        <div><img src="images/friends.png">500</div>
+                        <div><a href="#"><img src="images/heart.png">500k</a></div>
+                        <div><a href="#"><img src="images/star.png">120</a></div>
+                        <div><a href="followers.jsp"><img src="images/friends.png">Seguidores</a></div>
                     </div>
                 </div>
                 </a>

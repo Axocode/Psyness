@@ -46,7 +46,7 @@
                     <li>
                         <i class="fas fa-search" id="fa-search"></i>
                         <input type="text" id="myInput" placeholder="Buscar">
-                        <div class="dropdown-container">
+                        <!--<div class="dropdown-container">
                         
                         <div class="dropdown-content">
                             <ul class="list-group">
@@ -57,7 +57,7 @@
                                 <li class="list-group-item">And a fifth one</li>
                             </ul>
                         </div>
-                        </div>
+                        </div>-->
                     </li>
 
                     <li>
@@ -302,12 +302,12 @@
             </div>
             <div class="right-sidebar" >
             <div class="sidebar-profile">
-                <a href="profile.jsp" class="a-perfil" style="text-decoration:none">                    
+                <a href="profile.jsp?id=<%=sesion.getAttribute("SIUserNum")%>" class="a-perfil" style="text-decoration:none">                    
                 <div class="user-profile">
                     <img src="images/perfilsidebar.png" id="foton">
                     <div>
-                        <p id="username">1234</p>
-                        <small>JAFNA</small>
+                        <p id="username"><%=sesion.getAttribute("SIUser")%></p>
+                        <small><%=sesion.getAttribute("SIUserNum")%></small>
                     </div>   
                 </div>
                 <br>
