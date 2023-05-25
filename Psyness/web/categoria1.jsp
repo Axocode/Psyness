@@ -180,7 +180,7 @@
                         </button>
                     </div>
 
-                        <!--MODAL-->
+                        <!--MODAL
                               
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -212,11 +212,9 @@
                           </div>
                         </div>
                       </div>
+                        -->
                         <!--FIN MODAL-->
-                    <div class="add-post-links">
-                        <a href="#"><img src="images/camera.png">Agregar Img</a>
-                        <a href="#"><img src="images/upload.png">Subir Imagen</a>
-                    </div>
+                    
                 </div>
             </div>
             
@@ -228,7 +226,7 @@
                 padding-top: 3rem;">
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria1.jsp"><img src="images/bullying.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CrtSA6fLHUn/"><img src="images/bullying.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Bullying</h4>
                     <p class="card-text">¿Qué es el Bullying?<br>Serie de amenazas hostiles, físicas o verbales que se repiten, angustiando a la víctima y estableciendo un desequilibrio de poder entre ella y su acosador.
@@ -238,7 +236,7 @@
               </div>
               <div class="col">
                 <div class="card" style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria2.jsp"><img src="images/acoso.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CrvpAD9uMPW/"><img src="images/acoso.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Acoso Escolar</h4>
                     <p class="card-text">El acoso escolar puede causar daños físicos, sociales o emocionales en quienes lo sufren. Los estudiantes que son víctimas de acoso escolar no suelen defende
@@ -248,7 +246,7 @@
               </div>
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria3.jsp"><img src="images/ciberbullying.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/Cr1nTnYvK_K/"><img src="images/ciberbullying.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">CiberBullying</h4>
                     <p class="card-text">El ciberbullying es una variante del acoso que se produce a traves de internet. El tiene sensacion de anonimato y las consecuencias son mas dificiles de evaluar</p>
@@ -257,7 +255,7 @@
               </div>
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria4.jsp"><img src="images/FobiasDiscriminatorias.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CsZHHrDvGzY/"><img src="images/FobiasDiscriminatorias.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Fobias Discriminatorias</h4>
                     <p class="card-text">Es un tipo de transtorno de ansiedad. Es un temor fuerte e irracional.<br>Estas fobias es un tipo de discriminacion hacia las personas con otras capacidades y preferencias</p>

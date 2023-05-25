@@ -180,7 +180,7 @@
                         </button>
                     </div>
 
-                        <!--MODAL-->
+                        <!--MODAL
                               
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -213,10 +213,7 @@
                         </div>
                       </div>
                         <!--FIN MODAL-->
-                    <div class="add-post-links">
-                        <a href="#"><img src="images/camera.png">Agregar Img</a>
-                        <a href="#"><img src="images/upload.png">Subir Imagen</a>
-                    </div>
+                    
                 </div>
             </div>
             
@@ -228,7 +225,7 @@
                 padding-top: 3rem;">
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria1.jsp"><img src="images/mujerempresarial.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CscBbdtPXJR/"><img src="images/mujerempresarial.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Mujer Empresarial</h4>
                     <p class="card-text">En torno a las mujeres empresarias, es una ocasion valiosa para impulsar emprendimiento de jovenes y mujeres de cualquier edad, grupo social, raza o nacionalidad <br> <br>Con acciones que despejen su camino de obstaculos que les discrimine</p>

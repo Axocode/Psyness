@@ -176,11 +176,11 @@
                 <div class="post-input-container">
                     <div class="checkbox">
                         <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          ¿Que desea publicar?
+                          ¿Ver mas Publicaciones?
                         </button>
                     </div>
 
-                        <!--MODAL-->
+                        <!--MODAL
                               
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -213,10 +213,7 @@
                         </div>
                       </div>
                         <!--FIN MODAL-->
-                    <div class="add-post-links">
-                        <a href="#"><img src="images/camera.png">Agregar Img</a>
-                        <a href="#"><img src="images/upload.png">Subir Imagen</a>
-                    </div>
+                   
                 </div>
             </div>
             
@@ -228,7 +225,7 @@
                 padding-top: 3rem;">
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria1.jsp"><img src="images/adicciones.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CrOgBlrLbqF/"><img src="images/adicciones.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Adicciones</h4>
                     <p class="card-text">El consumo de drogas aumenta la posibilidad de ideacion suicida en un 30%<br><br>Asi mismo, llegan a tener un ataque de angustia, el cual puede determinar con un acto que atente contra su vida.</p>
@@ -237,7 +234,7 @@
               </div>
               <div class="col">
                 <div class="card" style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria2.jsp"><img src="images/prevencion.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CrRCiemrZdS/"><img src="images/prevencion.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Prevencion</h4>
                     <p class="card-text">La deteccion de factores de riesgo, el apoyo y seguimiento de casos y el fomento de programas de salud son elementos clave para la prevencion del suicidio.</p>
@@ -246,7 +243,7 @@
               </div>
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria3.jsp"><img src="images/suicidiomexico.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CrL3_IxLv0w/"><img src="images/suicidiomexico.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Suicidio en México</h4>
                     <p class="card-text">En México el suicidio es la segunda causa de muerte en adultos jovenes, es decir, personas de 15-44 años.</p>

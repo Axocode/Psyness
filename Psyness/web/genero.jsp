@@ -175,14 +175,14 @@
                 <br>
                 <div class="post-input-container">
                     <div class="checkbox">
-                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                          ¿Que desea publicar?
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                          ¿Ver mas Publicaciones?
                         </button>
                     </div>
 
                         <!--MODAL-->
                               
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <!--  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -211,12 +211,9 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div><!-- comment -->
                         <!--FIN MODAL-->
-                    <div class="add-post-links">
-                        <a href="#"><img src="images/camera.png">Agregar Img</a>
-                        <a href="#"><img src="images/upload.png">Subir Imagen</a>
-                    </div>
+                    
                 </div>
             </div>
             

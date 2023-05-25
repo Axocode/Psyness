@@ -180,7 +180,7 @@
                         </button>
                     </div>
 
-                        <!--MODAL-->
+                        <!--MODAL
                               
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -212,23 +212,19 @@
                           </div>
                         </div>
                       </div>
-                        <!--FIN MODAL-->
-                    <div class="add-post-links">
-                        <a href="#"><img src="images/camera.png">Agregar Img</a>
-                        <a href="#"><img src="images/upload.png">Subir Imagen</a>
-                    </div>
+                        -->
                 </div>
             </div>
             
             
             
             
-            <!<!-- CARDS -->
+            <!-- CARDS -->
                         <div class="row row-cols-1 row-cols-md-2 g-4" style="
                 padding-top: 3rem;">
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria1.jsp"><img src="images/igualdadgen.jpg" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CpyNJVzAkHd/"><img src="images/igualdadgen.jpg" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Igualda de Genero</h4>
                     <p class="card-text">La igualdad de género no solo es un derecho humano fundamental, sino que es uno de los fundamentos esenciales para construir un mundo pacífico, próspero y sostenible.</p>
@@ -237,7 +233,7 @@
               </div>
               <div class="col">
                 <div class="card" style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria2.jsp"><img src="images/violenciadegen.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/ClpEAGjg1Bt/"><img src="images/violenciadegen.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Violencia de Genero</h4>
                     <p class="card-text">Se trata de una violencia que afecta a las mujeres por el mero hecho de serlo. Constituye un atentado contra la integridad, la dignidad y la libertad de las mujeres, independentemente del ámbito en el que se produzca.</p>
@@ -246,7 +242,7 @@
               </div>
               <div class="col">
                 <div class="card"style="box-shadow: 5px 5px 10px 1px rgb(0 0 0 / 20%);">
-                    <a href="categoria3.jsp"><img src="images/LGBT+.png" class="card-img-top" alt="..."></a>
+                    <a href="https://www.instagram.com/p/CmH00DHAiZn/"><img src="images/LGBT+.png" class="card-img-top" alt="..."></a>
                   <div class="card-body">
                     <h4 class="card-title">Terminos LGBT+</h4>
                     <p class="card-text">Las palabras tienen valor, peso; ayudan a representar y construir el mundo que nos rodea. Por eso, es fundamental que las personas utilicemos los términos adecuados para retratar ética y respetuosamente a todas las personas.
